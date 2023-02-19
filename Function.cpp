@@ -2,13 +2,13 @@
 
 Function::Function() {
 
-};
-
-Function::Function(const Function& other) : func(other.func), n_dim(other.n_dim) {
-
 }
 
 Function::Function(double (*func_)(std::vector<double>), unsigned int n_dim_) : func(func_), n_dim(n_dim_) {
+
+}
+
+Function::Function(const Function& other) : func(other.func), n_dim(other.n_dim) {
 
 }
 
