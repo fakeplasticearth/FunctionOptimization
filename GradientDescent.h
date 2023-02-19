@@ -2,6 +2,9 @@
 #include "OptimizationMethod.h"
 #include "MDFunction.h"
 #include "GDOptInfo.h"
+#include "MinGradNormGDSC.h"
+#include "MinStepNormGDSC.h"
+#include "MinRelImpNormGDSC.h"
 
 class GradientDescent : public OptimizationMethod {
 private:
@@ -17,7 +20,7 @@ private:
 public:
     GradientDescent();
     GradientDescent(Function* func_, MDFunction* grad_, BoxArea* box_area_, StopCriterion* stop_criterion_, 
-        const std::vector<double>& first_point_, std::string norm_name_);
+        const std::vector<double>& first_point_, double lr_, std::string norm_name_);
     GradientDescent(const GradientDescent& other);
     GradientDescent(GradientDescent&& other) noexcept;
 

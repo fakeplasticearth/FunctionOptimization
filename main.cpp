@@ -5,6 +5,7 @@
 #include <math.h>
 #include <cstdio>
 #include "StohasticOptimization.h"
+#include "GradientDescent.h"
 
 //Functions
 
@@ -86,24 +87,22 @@ std::vector<double> camel_func_grad(std::vector<double> arg) {
 
 int main() {
     Function func;
+    MDFunction grad;
     BoxArea box_area;
     OptimizationMethod* optimization_method = nullptr;
     StopCriterion* stop_criterion = nullptr;
     std::vector<dimensional_limits> limits;
     std::vector<double> first_point, opt_point;
-    bool f, incorrect_input, method_parameters_type, stop_criterion_parameters_type, first_point_type, exit_programm = 0;
-    double delta, p, lower, upper, min_last_imp_norm;
+    bool f, incorrect_input, method_parameters_type, stop_criterion_parameters_type, first_point_type, exit_programm = 0, norm_type;
+    double delta, p, lower, upper, min_last_imp_norm, lr, min_grad_norm, min_last_step_norm, min_rel_imp_norm;
     OptResult opt_result;
+    std::string norm_name;
 
     unsigned int iter_max_num, max_iter_after_imp, dims, method_index, stop_criterion_index, func_index;
     std::cout << "Stohastic optimization and gradient descent \n";
 
     try {
         while (!exit_programm) {
-            if (stop_criterion)
-                delete stop_criterion;
-            if (optimization_method)
-                delete optimization_method;
 
             std::cout << "Do you want to exit programm? \n\t 0: Set parameters \n\t 1: Exit programm\n>";
             if (!scanf("%hhiu", &exit_programm)) 
@@ -117,24 +116,31 @@ int main() {
                 switch (func_index) {
                 case 1:
                     func = Function(spheric_func2, 2);
+                    grad = MDFunction(spheric_func2_grad, 2);
                     break;
                 case 2:
                     func = Function(spheric_func3, 3);
+                    grad = MDFunction(spheric_func3_grad, 3);
                     break;
                 case 3:
                     func = Function(rosenbrock_func2, 2);
+                    grad = MDFunction(rosenbrock_func2_grad, 2);
                     break;
                 case 4:
                     func = Function(rosenbrock_func3, 3);
+                    grad = MDFunction(rosenbrock_func3_grad, 3);
                     break;
                 case 5:
                     func = Function(rastrigin_func2, 2);
+                    grad = MDFunction(rastrigin_func2_grad, 2);
                     break;
                 case 6:
                     func = Function(rastrigin_func3, 3);
+                    grad = MDFunction(rastrigin_func3_grad, 3);
                     break;
                 case 7:
                     func = Function(camel_func, 2);
+                    grad = MDFunction(camel_func_grad, 2);
                     break;
                 default:
                     throw std::invalid_argument("Function index must be a decimal number from 1 to 7.");
@@ -234,7 +240,7 @@ int main() {
                             incorrect_input = 0;
                             std::cout << "Enter max num of iterations.\n>";
                             if (!scanf("%iu", &iter_max_num)) 
-                                throw std::invalid_argument("Incorrect iteration num parameter input.");
+                                throw std::invalid_argument("Incorrect max iteration num parameter input.");
                             if (iter_max_num == 0)
                                 incorrect_input = 1;
                         }
@@ -307,6 +313,171 @@ int main() {
                     }
                     optimization_method = new StohasticOptimization(&func, &box_area, stop_criterion, first_point, delta, p);
                     break;
+
+                 case 2:
+                     switch (method_parameters_type) {
+                     case 0:
+                         lr = 3e-4;
+                         break;
+                     case 1:
+                         incorrect_input = 1;
+                         while (incorrect_input) {
+                             std::cout << "Enter step rate parameter.\n>";
+                             incorrect_input = 0;
+                             if (!scanf("%lf", &lr))
+                                 throw std::invalid_argument("Incorrect step rate parameter input.");
+                             if (lr <= 0.)
+                                 incorrect_input = 1;
+                         }
+                     }
+
+                     std::cout << "Enter stop criterion index.\n";
+                     incorrect_input = 1;
+                     while (incorrect_input) {
+                         incorrect_input = 0;
+                         std::cout << "\t 1: Min grad norm limit \n\t 2: Min last step norm limit \n\t 3: Min relative improvment norm limit\n>";
+                         if (!scanf("%iu", &stop_criterion_index))
+                             throw std::invalid_argument("Incorrect stop criterion index input.");
+                         if (stop_criterion_index == 0 || stop_criterion_index > 3)
+                             incorrect_input = 1;
+                     }
+
+                     std::cout << "Enter stop criterion parameters type. \n";
+                     std::cout << "\t 0: Default \n\t 1: Otherwise\n>";
+                     if (!scanf("%hhiu", &stop_criterion_parameters_type))
+                         throw std::invalid_argument("Incorrect stop criterion parameter type input.");
+
+                     switch (stop_criterion_parameters_type) {
+                     case 0:
+                         iter_max_num = 5000;
+                         min_grad_norm = 1e-6;
+                         min_last_step_norm = 1e-6;
+                         min_rel_imp_norm = 1e-4;
+                         break;
+                     case 1:
+                         incorrect_input = 1;
+                         while (incorrect_input) {
+                             incorrect_input = 0;
+                             std::cout << "Enter max num of iterations.\n>";
+                             if (!scanf("%iu", &iter_max_num))
+                                 throw std::invalid_argument("Incorrect max iteration num parameter input.");
+                             if (iter_max_num == 0)
+                                 incorrect_input = 1;
+                         }
+
+                         switch (stop_criterion_index) {
+                         case 1:
+                             incorrect_input = 1;
+                             while (incorrect_input) {
+                                 incorrect_input = 0;
+                                 std::cout << "Enter min grad norm.\n>";
+                                 if (!scanf("%lf", &min_grad_norm))
+                                     throw std::invalid_argument("Incorrect min grad norm parameter.");
+                                 if (min_grad_norm <= 0.)
+                                     incorrect_input = 1;
+                             }
+                             break;
+                         case 2:
+                             incorrect_input = 1;
+                             while (incorrect_input) {
+                                 incorrect_input = 0;
+                                 std::cout << "Enter min last step norm.\n>";
+                                 if (!scanf("%lf", &min_last_step_norm))
+                                     throw std::invalid_argument("Incorrect min last step norm parameter.");
+                                 if (min_last_step_norm <= 0.)
+                                     incorrect_input = 1;
+                             }
+                             break;
+                         case 3:
+                             incorrect_input = 1;
+                             while (incorrect_input) {
+                                 incorrect_input = 0;
+                                 std::cout << "Enter min relative improvment norm.\n>";
+                                 if (!scanf("%lf", &min_last_imp_norm))
+                                     throw std::invalid_argument("Incorrect min relative improvment norm.");
+                                 if (min_last_imp_norm <= 0.)
+                                     incorrect_input = 1;
+                             }
+                             break;
+                         }
+                     }
+
+                     first_point = std::vector<double>(dims);
+                     std::cout << "Enter first point.\n";
+                     std::cout << "\t 0: Default \n\t 1: Otherwise\n";
+                     if (!scanf("%hhiu", &first_point_type))
+                         throw std::invalid_argument("Incorrect first point type parameter input.");
+                     switch (first_point_type) {
+                     case 0:
+                         for (int i = 0; i < dims; ++i) {
+                             first_point[i] = limits[i].lower + (limits[i].upper - limits[i].lower) / 2;
+                         }
+                         break;
+                     case 1:
+                         incorrect_input = 1;
+                         while (incorrect_input) {
+                             std::cout << "Enter first point coordinates: ";
+                             incorrect_input = 0;
+                             for (int i = 0; i < dims; ++i) {
+                                 if (!scanf("%lf", &first_point[i]))
+                                     throw std::invalid_argument("Incorrect point coordinate input.");
+                             }
+                             if (!box_area.is_in(first_point)) {
+                                 incorrect_input = 1;
+                                 std::cout << "Point is not in the area.\n";
+                             }
+                         }
+                         break;
+                     }
+
+                     switch (stop_criterion_index) {
+                     case 1:
+                         stop_criterion = new MinGradNormGDSC(iter_max_num, min_grad_norm);
+                         break;
+                     case 2:
+                         stop_criterion = new MinStepNormGDSC(iter_max_num, min_last_step_norm);
+                         break;
+                     case 3:
+                         stop_criterion = new MinRelImpNormGDSC(iter_max_num, min_rel_imp_norm);
+                         break;
+                     default:
+                         stop_criterion = nullptr;
+                         break;
+                     }
+
+                     std::cout << "Enter norm type.\n";
+                     std::cout << "\t 0: Default \n\t 1: Otherwise\n";
+                     if (!scanf("%hhiu", &norm_type))
+                         throw std::invalid_argument("Incorrect norm type parameter input.");
+
+                     switch (norm_type) {
+                     case 0:
+                         norm_name = "l2";
+                         break;
+                     case 1:
+                         unsigned int norm_name_index;
+                         incorrect_input = 1;
+                         while (incorrect_input) {
+                             std::cout << "Enter norm index. \n\t 1: l1 norm \n\t 2: l2 norm\n>";
+                             incorrect_input = 0;
+                             if (!scanf("%iu", &norm_name_index))
+                                 throw std::invalid_argument("Incorrect norm index parameter input.");
+                             if (norm_name_index != 1 && norm_name_index != 2)
+                                 incorrect_input = 1;
+                         }
+                         switch (norm_name_index) {
+                         case 1:
+                             norm_name = "l1";
+                             break;
+                         case 2:
+                             norm_name = "l2";
+                             break;
+                         }
+
+                     }
+
+                     optimization_method = new GradientDescent(&func, &grad, &box_area, stop_criterion, first_point, lr, norm_name);
+                     break;
                 }
 
                 opt_result = optimization_method -> optimize();
@@ -322,6 +493,11 @@ int main() {
                 for (int i = 0; i < 15; ++i)
                     std::cout << '=';
                 std::cout << '\n';
+
+                if (stop_criterion)
+                    delete stop_criterion;
+                if (optimization_method)
+                    delete optimization_method;
             }
         }
 
@@ -330,9 +506,5 @@ int main() {
         std::cerr << exeption_.what();
     }
 
-    if (stop_criterion) 
-        delete stop_criterion;
-    if (optimization_method) 
-        delete optimization_method;
 	return 0;
 }

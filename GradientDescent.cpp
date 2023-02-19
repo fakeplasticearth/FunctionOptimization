@@ -1,4 +1,5 @@
 #include "GradientDescent.h"
+#include <iostream>
 
 double l2_norm(std::vector<double> arg) {
     double ss = 0.;
@@ -43,8 +44,8 @@ GradientDescent::GradientDescent() : OptimizationMethod() {
 }
 
 GradientDescent::GradientDescent(Function* func_, MDFunction* grad_, BoxArea* box_area_, StopCriterion* stop_criterion_,
-    const std::vector<double>& first_point_, std::string norm_name_ = "l2") : OptimizationMethod(func_, box_area_, stop_criterion_),
-    grad(grad_), first_point(first_point_), curr_min_value((*func_)(first_point_)), lr(3e-4), norm_name(norm_name_),
+    const std::vector<double>& first_point_, double lr_, std::string norm_name_ = "l2") : OptimizationMethod(func_, box_area_, stop_criterion_),
+    grad(grad_), first_point(first_point_), curr_min_value((*func_)(first_point_)), lr(lr_), norm_name(norm_name_),
     last_step_norm(DBL_MAX), rel_imp_norm(DBL_MAX) {
     if (norm_name == "l2") {
         grad_norm = l2_norm((*grad)(first_point));
@@ -100,21 +101,24 @@ void GradientDescent::make_step() {
     double curr_value = value_history.back();
     std::vector<double> next_point(n_dim);
     std::vector<double> grad_value = (*grad)(curr_point);
+
     double tmp_lr = lr;
+    next_point = curr_point - lr * grad_value;
 
     if (!box_area->is_in(next_point)) {
         for (int i = 0; i < func->get_n_dim(); ++i) {
             dimensional_limits limit = box_area->get_limits(i);
             if (curr_point[i] - tmp_lr * grad_value[i] > limit.upper)
-                tmp_lr = (curr_point[i] - limit.upper) / grad_value[i];
+                tmp_lr = (curr_point[i] - limit.upper) / grad_value[i] / 5.;
             if (curr_point[i] - tmp_lr * grad_value[i] < limit.lower)
-                tmp_lr = (curr_point[i] - limit.lower) / grad_value[i];
+                tmp_lr = (curr_point[i] - limit.lower) / grad_value[i] / 5.;
         }
     }
 
     next_point = curr_point - tmp_lr * grad_value;
     point_history.push_back(next_point);
-    value_history.push_back((*func)(next_point));
+    curr_min_value = (*func)(next_point);
+    value_history.push_back(curr_min_value);
     if (norm_name == "l2") {
         grad_norm = l2_norm(grad_value);
         last_step_norm = l2_norm(next_point - curr_point);
