@@ -8,34 +8,41 @@
 
 //Functions
 
+// Minimum point: {0, 0}
 double spheric_func2(std::vector<double> arg) {
     return pow(arg[0], 2) + pow(arg[1], 2);
 }
 
+// Minimum point: {0, 0, 0}
 double spheric_func3(std::vector<double> arg) {
     return pow(arg[0], 2) + pow(arg[1], 2) + pow(arg[2], 2);
 }
 
 //https://en.wikipedia.org/wiki/Rosenbrock_function
+// Minimum point: {1, 1}
 double rosenbrock_func2(std::vector<double> arg) {
     return pow(1 - arg[0], 2) + 100 * pow(arg[1] - pow(arg[0], 2), 2);
 }
 
+// Minimum point: {1, 1, 1}
 double rosenbrock_func3(std::vector<double> arg) {
     return pow(1 - arg[0], 2) + 100 * pow(arg[1] - pow(arg[0], 2), 2) + pow(1 - arg[1], 2) + 100 * pow(arg[2] - pow(arg[1], 2), 2);
 }
 
 //https://en.wikipedia.org/wiki/Rastrigin_function
+// Minimum point: {0, 0}
 double rastrigin_func2(std::vector<double> arg) {
     return 10 * 2 + pow(arg[0], 2) - 10 * cos(2 * M_PI * arg[0]) + pow(arg[1], 2) - 10 * cos(2 * M_PI * arg[1]);
 }
 
+// Minimum point: {0, 0, 0}
 double rastrigin_func3(std::vector<double> arg) {
     return 10 * 2 + pow(arg[0], 2) - 10 * cos(2 * M_PI * arg[0]) + pow(arg[1], 2) - 10 * cos(2 * M_PI * arg[1]) +
         pow(arg[2], 2) - 10 * cos(2 * M_PI * arg[2]);
 }
 
 // Three hump camel function https://en.wikipedia.org/wiki/Test_functions_for_optimization
+// Minimum point: {0, 0}
 double camel_func(std::vector<double> arg) {
     return 2 * pow(arg[0], 2) - 1.05 * pow(arg[0], 4) + pow(arg[0], 6) / 6 + arg[0] * arg[1] + pow(arg[1], 2);
 }

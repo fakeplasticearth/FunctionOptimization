@@ -7,6 +7,7 @@
 #include "Function.h"
 #include "OptInfo.h"
 #include "OptResult.h"
+#include <string>
 
 class OptimizationMethod
 {

@@ -8,8 +8,8 @@ protected:
     double (*func)(std::vector<double>) = nullptr; // Указатель на функцию
 public:
     Function(); // Базовый конструктор
-    Function(const Function& other); // Конструктор копирования
     Function(double (*func_)(std::vector<double>), unsigned int n_dim_);
+    Function(const Function& other); // Конструктор копирования
     Function(Function&& other) noexcept;
 
     Function& operator=(Function other);

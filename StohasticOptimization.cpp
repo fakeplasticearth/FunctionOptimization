@@ -83,13 +83,7 @@ void StohasticOptimization::make_step() {
 }
 
 OptResult StohasticOptimization::optimize() {
-    if (!first_point.size()) {
-        first_point.resize(n_dim);
-        for (int i = 0; i < n_dim; ++i)
-            first_point[i] = unif(box_area ->get_limits(i).lower, box_area->get_limits(i).upper);
-    }
     point_history.push_back(first_point);
-
     curr_min_value = (*func)(point_history.back());
     while (!stop_criterion -> criterion(get_opt_info())) {
         make_step();
