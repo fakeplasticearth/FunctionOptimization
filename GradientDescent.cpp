@@ -44,8 +44,8 @@ GradientDescent::GradientDescent() : OptimizationMethod() {
 }
 
 GradientDescent::GradientDescent(Function* func_, MDFunction* grad_, BoxArea* box_area_, StopCriterion* stop_criterion_,
-    const std::vector<double>& first_point_, double lr_, std::string norm_name_ = "l2") : OptimizationMethod(func_, box_area_, stop_criterion_),
-    grad(grad_), first_point(first_point_), curr_min_value((*func_)(first_point_)), lr(lr_), norm_name(norm_name_),
+    const std::vector<double>& first_point_, unsigned int lr_steps_, std::string norm_name_ = "l2") : OptimizationMethod(func_, box_area_, stop_criterion_),
+    grad(grad_), first_point(first_point_), curr_min_value((*func_)(first_point_)), lr_steps(lr_steps_), norm_name(norm_name_),
     last_step_norm(DBL_MAX), rel_imp_norm(DBL_MAX) {
     if (norm_name == "l2") {
         grad_norm = l2_norm((*grad)(first_point));
@@ -59,13 +59,13 @@ GradientDescent::GradientDescent(Function* func_, MDFunction* grad_, BoxArea* bo
 }
 
 GradientDescent::GradientDescent(const GradientDescent& other) : OptimizationMethod(other), first_point(other.first_point),
-    curr_min_value(other.curr_min_value), lr(other.lr), grad_norm(other.grad_norm), last_step_norm(other.last_step_norm),
+    curr_min_value(other.curr_min_value), lr_steps(other.lr_steps), grad_norm(other.grad_norm), last_step_norm(other.last_step_norm),
     rel_imp_norm(other.rel_imp_norm), value_history(other.value_history) {
 
 }
 
 GradientDescent::GradientDescent(GradientDescent&& other) noexcept: OptimizationMethod(other), first_point(std::move(other.first_point)),
-    curr_min_value(other.curr_min_value), lr(other.lr), grad_norm(other.grad_norm), last_step_norm(other.last_step_norm),
+    curr_min_value(other.curr_min_value), lr_steps(other.lr_steps), grad_norm(other.grad_norm), last_step_norm(other.last_step_norm),
     rel_imp_norm(other.rel_imp_norm), value_history(other.value_history) {
     other.curr_min_value = DBL_MAX;
     other.grad = nullptr;
@@ -76,7 +76,7 @@ void GradientDescent::swap(GradientDescent& other) noexcept {
     OptimizationMethod::swap(other);
     std::swap(curr_min_value, other.curr_min_value);
     std::swap(first_point, other.first_point);
-    std::swap(lr, other.lr);
+    std::swap(lr_steps, other.lr_steps);
     std::swap(grad_norm, other.grad_norm);
     std::swap(last_step_norm, other.last_step_norm);
     std::swap(rel_imp_norm, other.rel_imp_norm);
@@ -102,20 +102,49 @@ void GradientDescent::make_step() {
     std::vector<double> next_point(n_dim);
     std::vector<double> grad_value = (*grad)(curr_point);
 
-    double tmp_lr = lr;
-    next_point = curr_point - lr * grad_value;
+    double lr = 0.;
+    dimensional_limits first_limit = box_area->get_limits(0);
 
-    if (!box_area->is_in(next_point)) {
-        for (int i = 0; i < func->get_n_dim(); ++i) {
-            dimensional_limits limit = box_area->get_limits(i);
-            if (curr_point[i] - tmp_lr * grad_value[i] > limit.upper)
-                tmp_lr = (curr_point[i] - limit.upper) / grad_value[i] / 5.;
-            if (curr_point[i] - tmp_lr * grad_value[i] < limit.lower)
-                tmp_lr = (curr_point[i] - limit.lower) / grad_value[i] / 5.;
+    for (int i = 0; i < curr_point.size(); ++i) {
+        if (grad_value[i] > 0.) {
+            lr = (curr_point[i] - first_limit.lower) / grad_value[i];
+            break;
+        }
+        else if (grad_value[i] < 0.) {
+            lr = (grad_value[i] - first_limit.upper) / grad_value[i];
+            break;
         }
     }
 
-    next_point = curr_point - tmp_lr * grad_value;
+    for (int i = 0; i < func->get_n_dim(); ++i) {
+        dimensional_limits limit = box_area->get_limits(i);
+        if (grad_value[i] > 0.)
+            lr = std::min(lr, (curr_point[i] - limit.lower) / grad_value[i]);
+        else if (grad_value[i] < 0.)
+            lr = std::min(lr, (curr_point[i] - limit.upper) / grad_value[i]);
+    }
+
+    next_point = curr_point;
+    double min_value_search = curr_value;
+    for (int i = 0; i <= lr_steps; ++i) {
+        double curr_value_step = (*func)(curr_point - lr / lr_steps * i * grad_value);
+        if (curr_value_step <= min_value_search) {
+            next_point = curr_point - lr / lr_steps * i * grad_value;
+            min_value_search = curr_value_step;
+        }
+    }
+
+    unsigned int updates = 0;
+    while ((next_point == curr_point) && (updates <= max_updates_lr)) {
+        ++updates;
+        lr = lr / scale;
+        double curr_value_step = (*func)(curr_point - lr / lr_steps * grad_value);
+        if (curr_value_step < min_value_search) {
+            next_point = curr_point - lr / lr_steps * grad_value;
+            break;
+        }
+    }
+
     point_history.push_back(next_point);
     curr_min_value = (*func)(next_point);
     value_history.push_back(curr_min_value);

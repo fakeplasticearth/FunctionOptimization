@@ -12,15 +12,17 @@ private:
     MDFunction* grad = nullptr;
     std::vector<double> first_point;
     double curr_min_value;
-    double lr; // decent step
+    unsigned int lr_steps;
     double grad_norm;
     double last_step_norm;
     double rel_imp_norm;
+    unsigned int max_updates_lr = 10;
+    double scale = 10.;
     std::string norm_name;
 public:
     GradientDescent();
     GradientDescent(Function* func_, MDFunction* grad_, BoxArea* box_area_, StopCriterion* stop_criterion_, 
-        const std::vector<double>& first_point_, double lr_, std::string norm_name_);
+        const std::vector<double>& first_point_, unsigned int lr_steps_, std::string norm_name_);
     GradientDescent(const GradientDescent& other);
     GradientDescent(GradientDescent&& other) noexcept;
 

@@ -94,11 +94,11 @@ int main() {
     std::vector<dimensional_limits> limits;
     std::vector<double> first_point, opt_point;
     bool f, incorrect_input, method_parameters_type, stop_criterion_parameters_type, first_point_type, exit_programm = 0, norm_type;
-    double delta, p, lower, upper, min_last_imp_norm, lr, min_grad_norm, min_last_step_norm, min_rel_imp_norm;
+    double delta, p, lower, upper, min_last_imp_norm, min_grad_norm, min_last_step_norm, min_rel_imp_norm;
     OptResult opt_result;
     std::string norm_name;
 
-    unsigned int iter_max_num, max_iter_after_imp, dims, method_index, stop_criterion_index, func_index;
+    unsigned int iter_max_num, max_iter_after_imp, dims, method_index, stop_criterion_index, func_index, lr_steps;
     std::cout << "Stohastic optimization and gradient descent \n";
 
     try {
@@ -317,16 +317,16 @@ int main() {
                  case 2:
                      switch (method_parameters_type) {
                      case 0:
-                         lr = 3e-4;
+                         lr_steps = 100;
                          break;
                      case 1:
                          incorrect_input = 1;
                          while (incorrect_input) {
-                             std::cout << "Enter step rate parameter.\n>";
+                             std::cout << "Enter number of steps per iteration parameter.\n>";
                              incorrect_input = 0;
-                             if (!scanf("%lf", &lr))
-                                 throw std::invalid_argument("Incorrect step rate parameter input.");
-                             if (lr <= 0.)
+                             if (!scanf("%iu", &lr_steps))
+                                 throw std::invalid_argument("Incorrect number of steps per iteration parameter input.");
+                             if (lr_steps == 0)
                                  incorrect_input = 1;
                          }
                      }
@@ -349,7 +349,7 @@ int main() {
 
                      switch (stop_criterion_parameters_type) {
                      case 0:
-                         iter_max_num = 5000;
+                         iter_max_num = 1000;
                          min_grad_norm = 1e-6;
                          min_last_step_norm = 1e-6;
                          min_rel_imp_norm = 1e-4;
@@ -476,7 +476,7 @@ int main() {
 
                      }
 
-                     optimization_method = new GradientDescent(&func, &grad, &box_area, stop_criterion, first_point, lr, norm_name);
+                     optimization_method = new GradientDescent(&func, &grad, &box_area, stop_criterion, first_point, lr_steps, norm_name);
                      break;
                 }
 
