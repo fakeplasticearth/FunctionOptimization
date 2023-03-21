@@ -1,0 +1,67 @@
+\hypertarget{class_m_d_function}{}\doxysection{MDFunction Class Reference}
+\label{class_m_d_function}\index{MDFunction@{MDFunction}}
+
+
+Class that stores vector-\/function with multidim argument.  
+
+
+
+
+{\ttfamily \#include $<$MDFunction.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_m_d_function_a4566f2e532f8c0d2961b83fbb0d762f4}\label{class_m_d_function_a4566f2e532f8c0d2961b83fbb0d762f4}} 
+{\bfseries MDFunction} (std\+::vector$<$ double $>$($\ast$func\+\_\+)(std\+::vector$<$ double $>$), unsigned int arg\+\_\+n\+\_\+dim\+\_\+)
+\item 
+\mbox{\Hypertarget{class_m_d_function_a85f3b3d49cfc1aaa4be03de161551504}\label{class_m_d_function_a85f3b3d49cfc1aaa4be03de161551504}} 
+{\bfseries MDFunction} (const \mbox{\hyperlink{class_m_d_function}{MDFunction}} \&other)
+\item 
+\mbox{\Hypertarget{class_m_d_function_a30e093cb3e98080dd8b57fdf18fd5b5c}\label{class_m_d_function_a30e093cb3e98080dd8b57fdf18fd5b5c}} 
+{\bfseries MDFunction} (\mbox{\hyperlink{class_m_d_function}{MDFunction}} \&\&other) noexcept
+\item 
+\mbox{\Hypertarget{class_m_d_function_ae08011e4287ece4d6a91685ab733612f}\label{class_m_d_function_ae08011e4287ece4d6a91685ab733612f}} 
+\mbox{\hyperlink{class_m_d_function}{MDFunction}} \& {\bfseries operator=} (\mbox{\hyperlink{class_m_d_function}{MDFunction}} other)
+\item 
+\mbox{\Hypertarget{class_m_d_function_a29c3a9aadf25c63ae1b4acad4dab6f8c}\label{class_m_d_function_a29c3a9aadf25c63ae1b4acad4dab6f8c}} 
+void {\bfseries swap} (\mbox{\hyperlink{class_m_d_function}{MDFunction}} \&other) noexcept
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_m_d_function_ac316ea894fda95a1abd7f533a72a7f7f}{operator()}} (const std\+::vector$<$ double $>$ \&argument) const
+\item 
+\mbox{\Hypertarget{class_m_d_function_aae3a678ac044cd695701f59ceecf0009}\label{class_m_d_function_aae3a678ac044cd695701f59ceecf0009}} 
+void {\bfseries set\+\_\+func} (std\+::vector$<$ double $>$($\ast$new\+\_\+func)(std\+::vector$<$ double $>$), unsigned int new\+\_\+arg\+\_\+n\+\_\+dim)
+\item 
+\mbox{\Hypertarget{class_m_d_function_ad66760288c4e8c68c97a13d6b22cc590}\label{class_m_d_function_ad66760288c4e8c68c97a13d6b22cc590}} 
+unsigned int {\bfseries get\+\_\+arg\+\_\+n\+\_\+dim} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_m_d_function_a31366be9c319aa88cc04af17e947af19}\label{class_m_d_function_a31366be9c319aa88cc04af17e947af19}} 
+unsigned int {\bfseries arg\+\_\+n\+\_\+dim} = 0
+\begin{DoxyCompactList}\small\item\em Number of dimensions of argument. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_m_d_function_a8803197a99cb06edbf823bca4f1cc2bb}\label{class_m_d_function_a8803197a99cb06edbf823bca4f1cc2bb}} 
+std\+::vector$<$ double $>$($\ast$ {\bfseries func} )(std\+::vector$<$ double $>$) = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer on a function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that stores vector-\/function with multidim argument. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{main_8cpp-example}{main.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_m_d_function_ac316ea894fda95a1abd7f533a72a7f7f}\label{class_m_d_function_ac316ea894fda95a1abd7f533a72a7f7f}} 
+\index{MDFunction@{MDFunction}!operator()@{operator()}}
+\index{operator()@{operator()}!MDFunction@{MDFunction}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ MDFunction\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{argument }\end{DoxyParamCaption}) const}
+
+Returns value of function at the point. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+MDFunction.\+h\item 
+MDFunction.\+cpp\end{DoxyCompactItemize}

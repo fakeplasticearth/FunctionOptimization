@@ -1,0 +1,72 @@
+\hypertarget{class_function}{}\doxysection{Function Class Reference}
+\label{class_function}\index{Function@{Function}}
+
+
+Class that contains a pointer on scalar function with several arguments.  
+
+
+
+
+{\ttfamily \#include $<$Function.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_function_a80e90958392822a41afd46d138fcccf5}\label{class_function_a80e90958392822a41afd46d138fcccf5}} 
+{\bfseries Function} (double($\ast$func\+\_\+)(std\+::vector$<$ double $>$), unsigned int n\+\_\+dim\+\_\+)
+\item 
+\mbox{\Hypertarget{class_function_a9a76c178436c9e249ad74d6b9eb1ea73}\label{class_function_a9a76c178436c9e249ad74d6b9eb1ea73}} 
+{\bfseries Function} (const \mbox{\hyperlink{class_function}{Function}} \&other)
+\item 
+\mbox{\Hypertarget{class_function_acd1625dba4a8e5eb3be0e29c7adca169}\label{class_function_acd1625dba4a8e5eb3be0e29c7adca169}} 
+{\bfseries Function} (\mbox{\hyperlink{class_function}{Function}} \&\&other) noexcept
+\item 
+\mbox{\Hypertarget{class_function_a7875f2da6268bf86501b4f9a871d277f}\label{class_function_a7875f2da6268bf86501b4f9a871d277f}} 
+\mbox{\hyperlink{class_function}{Function}} \& {\bfseries operator=} (\mbox{\hyperlink{class_function}{Function}} other)
+\item 
+\mbox{\Hypertarget{class_function_afa2da49727f0a72e58b2830191f0e3b1}\label{class_function_afa2da49727f0a72e58b2830191f0e3b1}} 
+void {\bfseries swap} (\mbox{\hyperlink{class_function}{Function}} \&other) noexcept
+\item 
+double \mbox{\hyperlink{class_function_aa5c1f1ed3ef9abb2b7bfffacb3d6f4a4}{operator()}} (const std\+::vector$<$ double $>$ \&argument) const
+\item 
+\mbox{\Hypertarget{class_function_a39eaf0673f66bcc402444a33cc46200a}\label{class_function_a39eaf0673f66bcc402444a33cc46200a}} 
+void {\bfseries set\+\_\+func} (double($\ast$new\+\_\+func)(std\+::vector$<$ double $>$), unsigned int new\+\_\+n\+\_\+dim)
+\item 
+\mbox{\Hypertarget{class_function_a598f8abb8c9e75d7be19aa34f56687ba}\label{class_function_a598f8abb8c9e75d7be19aa34f56687ba}} 
+unsigned int {\bfseries get\+\_\+n\+\_\+dim} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_function_a24c054d71859443399b8390022ba31c4}\label{class_function_a24c054d71859443399b8390022ba31c4}} 
+unsigned int {\bfseries n\+\_\+dim} = 0
+\begin{DoxyCompactList}\small\item\em Number of dimensions of argument. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a60b1fe190ede451106071837de88f6d9}\label{class_function_a60b1fe190ede451106071837de88f6d9}} 
+double($\ast$ {\bfseries func} )(std\+::vector$<$ double $>$) = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer on a function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that contains a pointer on scalar function with several arguments. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{main_8cpp-example}{main.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_function_aa5c1f1ed3ef9abb2b7bfffacb3d6f4a4}\label{class_function_aa5c1f1ed3ef9abb2b7bfffacb3d6f4a4}} 
+\index{Function@{Function}!operator()@{operator()}}
+\index{operator()@{operator()}!Function@{Function}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily double Function\+::operator() (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{argument }\end{DoxyParamCaption}) const}
+
+Returns value of function. 
+\begin{DoxyParams}{Parameters}
+{\em argument} & Vector that contains coordinates of a point. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Function.\+h\item 
+Function.\+cpp\end{DoxyCompactItemize}

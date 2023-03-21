@@ -1,0 +1,68 @@
+\hypertarget{class_iter_after_imp_s_s_c}{}\doxysection{Iter\+After\+Imp\+SSC Class Reference}
+\label{class_iter_after_imp_s_s_c}\index{IterAfterImpSSC@{IterAfterImpSSC}}
+
+
+Class of stop criterion for stohastic optimization that triggeres after maximum number of iterations after last improvement or after maximum number of iterations.  
+
+
+
+
+{\ttfamily \#include $<$Iter\+After\+Imp\+SSC.\+h$>$}
+
+Inheritance diagram for Iter\+After\+Imp\+SSC\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_iter_after_imp_s_s_c}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_iter_after_imp_s_s_c_abfd8a04d83e36ff0869dc3816f3d0f3c}\label{class_iter_after_imp_s_s_c_abfd8a04d83e36ff0869dc3816f3d0f3c}} 
+{\bfseries Iter\+After\+Imp\+SSC} (unsigned int max\+\_\+n\+\_\+iter\+\_\+, unsigned int max\+\_\+n\+\_\+iter\+\_\+after\+\_\+imp\+\_\+)
+\item 
+\mbox{\Hypertarget{class_iter_after_imp_s_s_c_a42bcc6cfc16f556986569c2e342d85aa}\label{class_iter_after_imp_s_s_c_a42bcc6cfc16f556986569c2e342d85aa}} 
+{\bfseries Iter\+After\+Imp\+SSC} (const \mbox{\hyperlink{class_iter_after_imp_s_s_c}{Iter\+After\+Imp\+SSC}} \&other)
+\item 
+\mbox{\Hypertarget{class_iter_after_imp_s_s_c_a516160b5e8c93cce44b2c65b57fadcef}\label{class_iter_after_imp_s_s_c_a516160b5e8c93cce44b2c65b57fadcef}} 
+{\bfseries Iter\+After\+Imp\+SSC} (\mbox{\hyperlink{class_iter_after_imp_s_s_c}{Iter\+After\+Imp\+SSC}} \&\&other) noexcept
+\item 
+\mbox{\Hypertarget{class_iter_after_imp_s_s_c_a5125461dfb5dd92b249e1a9131dc3ee5}\label{class_iter_after_imp_s_s_c_a5125461dfb5dd92b249e1a9131dc3ee5}} 
+void {\bfseries swap} (\mbox{\hyperlink{class_iter_after_imp_s_s_c}{Iter\+After\+Imp\+SSC}} \&other) noexcept
+\item 
+\mbox{\Hypertarget{class_iter_after_imp_s_s_c_a9801c9a2f9a0cdb8655797af95e6cc1f}\label{class_iter_after_imp_s_s_c_a9801c9a2f9a0cdb8655797af95e6cc1f}} 
+\mbox{\hyperlink{class_iter_after_imp_s_s_c}{Iter\+After\+Imp\+SSC}} \& {\bfseries operator=} (\mbox{\hyperlink{class_iter_after_imp_s_s_c}{Iter\+After\+Imp\+SSC}} other) noexcept
+\item 
+bool \mbox{\hyperlink{class_iter_after_imp_s_s_c_a53681eb99628186d5c8bd813c44a7de0}{criterion}} (\mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$status)
+\item 
+\mbox{\Hypertarget{class_iter_after_imp_s_s_c_ae91973a23290533f2184e413fb112211}\label{class_iter_after_imp_s_s_c_ae91973a23290533f2184e413fb112211}} 
+unsigned int {\bfseries get\+\_\+max\+\_\+n\+\_\+iter\+\_\+after\+\_\+imp} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class of stop criterion for stohastic optimization that triggeres after maximum number of iterations after last improvement or after maximum number of iterations. 
+
+This stop criterion triggeres if function value was not decreased after some number of iterations. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{main_8cpp-example}{main.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_iter_after_imp_s_s_c_a53681eb99628186d5c8bd813c44a7de0}\label{class_iter_after_imp_s_s_c_a53681eb99628186d5c8bd813c44a7de0}} 
+\index{IterAfterImpSSC@{IterAfterImpSSC}!criterion@{criterion}}
+\index{criterion@{criterion}!IterAfterImpSSC@{IterAfterImpSSC}}
+\doxysubsubsection{\texorpdfstring{criterion()}{criterion()}}
+{\footnotesize\ttfamily bool Iter\+After\+Imp\+SSC\+::criterion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns true if stop criterion is triggered, otherwise returns false. 
+
+Implements \mbox{\hyperlink{class_stop_criterion_abf1158cb3637caf8aedf162a542b5b2a}{Stop\+Criterion}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Iter\+After\+Imp\+SSC.\+h\item 
+Iter\+After\+Imp\+SSC.\+cpp\end{DoxyCompactItemize}

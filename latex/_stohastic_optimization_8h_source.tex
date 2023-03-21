@@ -1,0 +1,43 @@
+\hypertarget{_stohastic_optimization_8h_source}{}\doxysection{Stohastic\+Optimization.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <float.h>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}OptimizationMethod.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}IterOnlySSC.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}IterAfterImpSSC.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}NormDiffSSC.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <random>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_stohastic_optimization}{StohasticOptimization}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_optimization_method}{OptimizationMethod}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15 \textcolor{keyword}{private}:}
+\DoxyCodeLine{17     std::vector<double> first\_point;}
+\DoxyCodeLine{19     \textcolor{keywordtype}{double} curr\_min\_value;}
+\DoxyCodeLine{21     \textcolor{keywordtype}{double} delta;}
+\DoxyCodeLine{23     \textcolor{keywordtype}{double} p;}
+\DoxyCodeLine{25     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n\_iter\_after\_improvment;}
+\DoxyCodeLine{27     \textcolor{keywordtype}{double} last\_imp\_norm = DBL\_MAX;}
+\DoxyCodeLine{29     std::uniform\_real\_distribution<double> distribution;}
+\DoxyCodeLine{31     std::default\_random\_engine generator;}
+\DoxyCodeLine{33     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} seed;}
+\DoxyCodeLine{37     \textcolor{keywordtype}{double} unif(\textcolor{keywordtype}{double} lower, \textcolor{keywordtype}{double} upper);}
+\DoxyCodeLine{38 \textcolor{keyword}{public}:}
+\DoxyCodeLine{39     \mbox{\hyperlink{class_stohastic_optimization}{StohasticOptimization}}();}
+\DoxyCodeLine{40     \mbox{\hyperlink{class_stohastic_optimization}{StohasticOptimization}}(\mbox{\hyperlink{class_function}{Function}}* func\_, \mbox{\hyperlink{class_box_area}{BoxArea}}* box\_area\_, \mbox{\hyperlink{class_stop_criterion}{StopCriterion}}* stop\_criterion\_, \textcolor{keyword}{const} std::vector<double>\& first\_point\_, }
+\DoxyCodeLine{41         \textcolor{keywordtype}{double} delta\_, \textcolor{keywordtype}{double} p\_);}
+\DoxyCodeLine{42     \mbox{\hyperlink{class_stohastic_optimization}{StohasticOptimization}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_stohastic_optimization}{StohasticOptimization}}\& other);}
+\DoxyCodeLine{43     \mbox{\hyperlink{class_stohastic_optimization}{StohasticOptimization}}(\mbox{\hyperlink{class_stohastic_optimization}{StohasticOptimization}}\&\& other);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} swap(\mbox{\hyperlink{class_stohastic_optimization}{StohasticOptimization}}\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{46     \mbox{\hyperlink{class_stohastic_optimization}{StohasticOptimization}}\& operator=(\mbox{\hyperlink{class_stohastic_optimization}{StohasticOptimization}} other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} set\_first\_point(\textcolor{keyword}{const} std::vector<double>\& point);}
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_stohastic_optimization_a880fadd31b45f753c03ae1723e1af329}{make\_step}}();}
+\DoxyCodeLine{55     \mbox{\hyperlink{class_opt_result}{OptResult}} \mbox{\hyperlink{class_stohastic_optimization_a3cafc707c2bfdec28217227f6fb00c15}{optimize}}();}
+\DoxyCodeLine{56     \mbox{\hyperlink{class_opt_info}{OptInfo}}* get\_opt\_info() \textcolor{keyword}{const};}
+\DoxyCodeLine{57     \mbox{\hyperlink{class_stohastic_optimization}{\string~StohasticOptimization}}();}
+\DoxyCodeLine{58 \};}
+\DoxyCodeLine{59 }
+
+\end{DoxyCode}

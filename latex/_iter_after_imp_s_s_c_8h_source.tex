@@ -1,0 +1,25 @@
+\hypertarget{_iter_after_imp_s_s_c_8h_source}{}\doxysection{Iter\+After\+Imp\+SSC.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}StopCriterion.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}StohOptInfo.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_iter_after_imp_s_s_c}{IterAfterImpSSC}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_stop_criterion}{StopCriterion}} \{}
+\DoxyCodeLine{11 \textcolor{keyword}{private}:}
+\DoxyCodeLine{13     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} max\_n\_iter\_after\_imp;}
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_iter_after_imp_s_s_c}{IterAfterImpSSC}}();}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_iter_after_imp_s_s_c}{IterAfterImpSSC}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} max\_n\_iter\_, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} max\_n\_iter\_after\_imp\_);}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_iter_after_imp_s_s_c}{IterAfterImpSSC}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_iter_after_imp_s_s_c}{IterAfterImpSSC}}\& other);}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_iter_after_imp_s_s_c}{IterAfterImpSSC}}(\mbox{\hyperlink{class_iter_after_imp_s_s_c}{IterAfterImpSSC}}\&\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} swap(\mbox{\hyperlink{class_iter_after_imp_s_s_c}{IterAfterImpSSC}}\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_iter_after_imp_s_s_c}{IterAfterImpSSC}}\& operator=(\mbox{\hyperlink{class_iter_after_imp_s_s_c}{IterAfterImpSSC}} other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{25     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_iter_after_imp_s_s_c_a53681eb99628186d5c8bd813c44a7de0}{criterion}}(\mbox{\hyperlink{class_opt_info}{OptInfo}}* status);}
+\DoxyCodeLine{26     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} get\_max\_n\_iter\_after\_imp() \textcolor{keyword}{const};}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_iter_after_imp_s_s_c}{\string~IterAfterImpSSC}}();}
+\DoxyCodeLine{28 \};}
+\DoxyCodeLine{29 }
+
+\end{DoxyCode}

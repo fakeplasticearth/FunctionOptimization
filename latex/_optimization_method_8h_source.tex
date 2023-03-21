@@ -1,0 +1,40 @@
+\hypertarget{_optimization_method_8h_source}{}\doxysection{Optimization\+Method.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}StopCriterion.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}BoxArea.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}Function.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}OptInfo.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}OptResult.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_optimization_method}{OptimizationMethod}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_optimization_method}{OptimizationMethod}}();}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_optimization_method}{OptimizationMethod}}(\mbox{\hyperlink{class_function}{Function}}* func\_, \mbox{\hyperlink{class_box_area}{BoxArea}}* box\_area\_, \mbox{\hyperlink{class_stop_criterion}{StopCriterion}}* stop\_criterion\_);}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_optimization_method}{OptimizationMethod}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_optimization_method}{OptimizationMethod}}\& other);}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_optimization_method}{OptimizationMethod}}(\mbox{\hyperlink{class_optimization_method}{OptimizationMethod}}\&\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} swap(\mbox{\hyperlink{class_optimization_method}{OptimizationMethod}}\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{26     std::vector <std::vector<double> > \mbox{\hyperlink{class_optimization_method_afdb7e3633fd8253d8cb623bd5d28ea75}{point\_history}};}
+\DoxyCodeLine{28     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_optimization_method_a584762c8be766108e9acc4d668f801c2}{n\_iter}} = 0;}
+\DoxyCodeLine{30     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_optimization_method_a5b31674ed9fe41bddafe9628b698bdc2}{n\_dim}} = 0;}
+\DoxyCodeLine{32     \mbox{\hyperlink{class_box_area}{BoxArea}}* \mbox{\hyperlink{class_optimization_method_a1a3554c9fcbd0303f2adc192d09c9474}{box\_area}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{34     \mbox{\hyperlink{class_function}{Function}}* \mbox{\hyperlink{class_optimization_method_a216ec595af9754b6198369854f072700}{func}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{36     \mbox{\hyperlink{class_stop_criterion}{StopCriterion}}* \mbox{\hyperlink{class_optimization_method_a320411ef4368b0d3adcfb37159d50d58}{stop\_criterion}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{40     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_optimization_method_a57d8ff232ad287188f12e8de598b9dcd}{make\_step}}() = 0;}
+\DoxyCodeLine{41 \textcolor{keyword}{public}:}
+\DoxyCodeLine{42     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_opt_info}{OptInfo}}* get\_opt\_info() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{46     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_opt_result}{OptResult}} \mbox{\hyperlink{class_optimization_method_a0919b45b310b4a052e698a726d5576e0}{optimize}}() = 0;}
+\DoxyCodeLine{47     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_optimization_method}{\string~OptimizationMethod}}();}
+\DoxyCodeLine{48     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} get\_n\_dim() \textcolor{keyword}{const};}
+\DoxyCodeLine{49     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} get\_n\_iter() \textcolor{keyword}{const};}
+\DoxyCodeLine{50 \};}
+\DoxyCodeLine{51 }
+
+\end{DoxyCode}

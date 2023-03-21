@@ -1,0 +1,65 @@
+\hypertarget{class_min_rel_imp_norm_g_d_s_c}{}\doxysection{Min\+Rel\+Imp\+Norm\+GDSC Class Reference}
+\label{class_min_rel_imp_norm_g_d_s_c}\index{MinRelImpNormGDSC@{MinRelImpNormGDSC}}
+
+
+Class of stop criterion for gradient descent that triggeres if norm of relative difference is less than threshold or after maximum number of iterations.  
+
+
+
+
+{\ttfamily \#include $<$Min\+Rel\+Imp\+Norm\+GDSC.\+h$>$}
+
+Inheritance diagram for Min\+Rel\+Imp\+Norm\+GDSC\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_min_rel_imp_norm_g_d_s_c}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_min_rel_imp_norm_g_d_s_c_a172733528bb34467b9a663fc4caf6a09}\label{class_min_rel_imp_norm_g_d_s_c_a172733528bb34467b9a663fc4caf6a09}} 
+{\bfseries Min\+Rel\+Imp\+Norm\+GDSC} (unsigned int max\+\_\+n\+\_\+iter\+\_\+, double min\+\_\+rel\+\_\+imp\+\_\+norm\+\_\+)
+\item 
+\mbox{\Hypertarget{class_min_rel_imp_norm_g_d_s_c_a59abdaf395f570721f687192b06aacf8}\label{class_min_rel_imp_norm_g_d_s_c_a59abdaf395f570721f687192b06aacf8}} 
+{\bfseries Min\+Rel\+Imp\+Norm\+GDSC} (const \mbox{\hyperlink{class_min_rel_imp_norm_g_d_s_c}{Min\+Rel\+Imp\+Norm\+GDSC}} \&other)
+\item 
+\mbox{\Hypertarget{class_min_rel_imp_norm_g_d_s_c_a035933678e3915d678f374a664b49c9c}\label{class_min_rel_imp_norm_g_d_s_c_a035933678e3915d678f374a664b49c9c}} 
+{\bfseries Min\+Rel\+Imp\+Norm\+GDSC} (\mbox{\hyperlink{class_min_rel_imp_norm_g_d_s_c}{Min\+Rel\+Imp\+Norm\+GDSC}} \&\&other) noexcept
+\item 
+\mbox{\Hypertarget{class_min_rel_imp_norm_g_d_s_c_a4cca1b1553dabc5af9866e8cbd6ce2c7}\label{class_min_rel_imp_norm_g_d_s_c_a4cca1b1553dabc5af9866e8cbd6ce2c7}} 
+void {\bfseries swap} (\mbox{\hyperlink{class_min_rel_imp_norm_g_d_s_c}{Min\+Rel\+Imp\+Norm\+GDSC}} \&other) noexcept
+\item 
+\mbox{\Hypertarget{class_min_rel_imp_norm_g_d_s_c_abdc5c1a87e33deddfd37fc173d6ac4c8}\label{class_min_rel_imp_norm_g_d_s_c_abdc5c1a87e33deddfd37fc173d6ac4c8}} 
+\mbox{\hyperlink{class_min_rel_imp_norm_g_d_s_c}{Min\+Rel\+Imp\+Norm\+GDSC}} \& {\bfseries operator=} (\mbox{\hyperlink{class_min_rel_imp_norm_g_d_s_c}{Min\+Rel\+Imp\+Norm\+GDSC}} other) noexcept
+\item 
+bool \mbox{\hyperlink{class_min_rel_imp_norm_g_d_s_c_a2db75eeeb7412617d71d177858acff70}{criterion}} (\mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$status)
+\item 
+\mbox{\Hypertarget{class_min_rel_imp_norm_g_d_s_c_ad85d5b9296123d76323d956dd08f598c}\label{class_min_rel_imp_norm_g_d_s_c_ad85d5b9296123d76323d956dd08f598c}} 
+double {\bfseries get\+\_\+min\+\_\+rel\+\_\+imp\+\_\+norm} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class of stop criterion for gradient descent that triggeres if norm of relative difference is less than threshold or after maximum number of iterations. 
+
+Norm of relative difference is norm of difference of current value of function and previous value of function, divided by current value of function. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_min_rel_imp_norm_g_d_s_c_a2db75eeeb7412617d71d177858acff70}\label{class_min_rel_imp_norm_g_d_s_c_a2db75eeeb7412617d71d177858acff70}} 
+\index{MinRelImpNormGDSC@{MinRelImpNormGDSC}!criterion@{criterion}}
+\index{criterion@{criterion}!MinRelImpNormGDSC@{MinRelImpNormGDSC}}
+\doxysubsubsection{\texorpdfstring{criterion()}{criterion()}}
+{\footnotesize\ttfamily bool Min\+Rel\+Imp\+Norm\+GDSC\+::criterion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns true if stop criterion is triggered, otherwise returns false. 
+
+Implements \mbox{\hyperlink{class_stop_criterion_abf1158cb3637caf8aedf162a542b5b2a}{Stop\+Criterion}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Min\+Rel\+Imp\+Norm\+GDSC.\+h\item 
+Min\+Rel\+Imp\+Norm\+GDSC.\+cpp\end{DoxyCompactItemize}

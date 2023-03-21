@@ -1,0 +1,27 @@
+\hypertarget{_m_d_function_8h_source}{}\doxysection{MDFunction.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_m_d_function}{MDFunction}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{11     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_m_d_function_a31366be9c319aa88cc04af17e947af19}{arg\_n\_dim}} = 0;}
+\DoxyCodeLine{13     std::vector<double> (*\mbox{\hyperlink{class_m_d_function_a8803197a99cb06edbf823bca4f1cc2bb}{func}})(std::vector<double>) = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_m_d_function}{MDFunction}}(); \textcolor{comment}{// Базовый конструктор}}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_m_d_function}{MDFunction}}(std::vector<double>(*func\_)(std::vector<double>), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} arg\_n\_dim\_);}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_m_d_function}{MDFunction}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_m_d_function}{MDFunction}}\& other); \textcolor{comment}{// Конструктор копирования}}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_m_d_function}{MDFunction}}(\mbox{\hyperlink{class_m_d_function}{MDFunction}}\&\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \mbox{\hyperlink{class_m_d_function}{MDFunction}}\& operator=(\mbox{\hyperlink{class_m_d_function}{MDFunction}} other);}
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} swap(\mbox{\hyperlink{class_m_d_function}{MDFunction}}\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{25     std::vector<double> \mbox{\hyperlink{class_m_d_function_ac316ea894fda95a1abd7f533a72a7f7f}{operator()}}(\textcolor{keyword}{const} std::vector<double>\& argument) \textcolor{keyword}{const};}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} set\_func(std::vector<double> (*new\_func)(std::vector<double>), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} new\_arg\_n\_dim);}
+\DoxyCodeLine{27     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} get\_arg\_n\_dim() \textcolor{keyword}{const};}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_m_d_function}{\string~MDFunction}}();}
+\DoxyCodeLine{29 \};}
+\DoxyCodeLine{30 }
+
+\end{DoxyCode}

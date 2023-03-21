@@ -1,0 +1,101 @@
+\hypertarget{class_gradient_descent}{}\doxysection{Gradient\+Descent Class Reference}
+\label{class_gradient_descent}\index{GradientDescent@{GradientDescent}}
+
+
+Class that performs gradient descent and stores information about optimization.  
+
+
+
+
+{\ttfamily \#include $<$Gradient\+Descent.\+h$>$}
+
+Inheritance diagram for Gradient\+Descent\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gradient_descent}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_gradient_descent_af16d5a9e284955f5bcbacecf19baadcd}\label{class_gradient_descent_af16d5a9e284955f5bcbacecf19baadcd}} 
+{\bfseries Gradient\+Descent} (\mbox{\hyperlink{class_function}{Function}} $\ast$func\+\_\+, \mbox{\hyperlink{class_m_d_function}{MDFunction}} $\ast$grad\+\_\+, \mbox{\hyperlink{class_box_area}{Box\+Area}} $\ast$box\+\_\+area\+\_\+, \mbox{\hyperlink{class_stop_criterion}{Stop\+Criterion}} $\ast$stop\+\_\+criterion\+\_\+, const std\+::vector$<$ double $>$ \&first\+\_\+point\+\_\+, unsigned int lr\+\_\+steps\+\_\+, std\+::string norm\+\_\+name\+\_\+)
+\item 
+\mbox{\Hypertarget{class_gradient_descent_a190a92ee7a1be8510c5791fdb656e16b}\label{class_gradient_descent_a190a92ee7a1be8510c5791fdb656e16b}} 
+{\bfseries Gradient\+Descent} (const \mbox{\hyperlink{class_gradient_descent}{Gradient\+Descent}} \&other)
+\item 
+\mbox{\Hypertarget{class_gradient_descent_a94a4c080606c986a1826e5506ef9a1c6}\label{class_gradient_descent_a94a4c080606c986a1826e5506ef9a1c6}} 
+{\bfseries Gradient\+Descent} (\mbox{\hyperlink{class_gradient_descent}{Gradient\+Descent}} \&\&other) noexcept
+\item 
+\mbox{\Hypertarget{class_gradient_descent_a21d319495530560838aed3ff191964aa}\label{class_gradient_descent_a21d319495530560838aed3ff191964aa}} 
+void {\bfseries swap} (\mbox{\hyperlink{class_gradient_descent}{Gradient\+Descent}} \&other) noexcept
+\item 
+\mbox{\Hypertarget{class_gradient_descent_adc3cab4e1aa486d33c6ff69866f8a457}\label{class_gradient_descent_adc3cab4e1aa486d33c6ff69866f8a457}} 
+\mbox{\hyperlink{class_gradient_descent}{Gradient\+Descent}} \& {\bfseries operator=} (\mbox{\hyperlink{class_gradient_descent}{Gradient\+Descent}} other) noexcept
+\item 
+\mbox{\Hypertarget{class_gradient_descent_a284a0050f65791ef72e861ee7e5ace53}\label{class_gradient_descent_a284a0050f65791ef72e861ee7e5ace53}} 
+void {\bfseries set\+\_\+first\+\_\+point} (const std\+::vector$<$ double $>$ \&point)
+\item 
+void \mbox{\hyperlink{class_gradient_descent_a7a10ec556f433f9b0c803d1d77360fa6}{make\+\_\+step}} ()
+\item 
+\mbox{\hyperlink{class_opt_result}{Opt\+Result}} \mbox{\hyperlink{class_gradient_descent_ab7ae1c0c25d4c18c1b108d10ad72e0ce}{optimize}} ()
+\item 
+\mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$ \mbox{\hyperlink{class_gradient_descent_ab3cb9099e01930cc5e91fbf3fe120b58}{get\+\_\+opt\+\_\+info}} () const
+\item 
+\mbox{\hyperlink{class_gradient_descent_adaacebc37d3cd518b74d52f417da1118}{$\sim$\+Gradient\+Descent}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class that performs gradient descent and stores information about optimization. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{main_8cpp-example}{main.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gradient_descent_adaacebc37d3cd518b74d52f417da1118}\label{class_gradient_descent_adaacebc37d3cd518b74d52f417da1118}} 
+\index{GradientDescent@{GradientDescent}!````~GradientDescent@{$\sim$GradientDescent}}
+\index{````~GradientDescent@{$\sim$GradientDescent}!GradientDescent@{GradientDescent}}
+\doxysubsubsection{\texorpdfstring{$\sim$GradientDescent()}{~GradientDescent()}}
+{\footnotesize\ttfamily Gradient\+Descent\+::$\sim$\+Gradient\+Descent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns optimization information. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gradient_descent_ab3cb9099e01930cc5e91fbf3fe120b58}\label{class_gradient_descent_ab3cb9099e01930cc5e91fbf3fe120b58}} 
+\index{GradientDescent@{GradientDescent}!get\_opt\_info@{get\_opt\_info}}
+\index{get\_opt\_info@{get\_opt\_info}!GradientDescent@{GradientDescent}}
+\doxysubsubsection{\texorpdfstring{get\_opt\_info()}{get\_opt\_info()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$ Gradient\+Descent\+::get\+\_\+opt\+\_\+info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_optimization_method}{Optimization\+Method}}.
+
+\mbox{\Hypertarget{class_gradient_descent_a7a10ec556f433f9b0c803d1d77360fa6}\label{class_gradient_descent_a7a10ec556f433f9b0c803d1d77360fa6}} 
+\index{GradientDescent@{GradientDescent}!make\_step@{make\_step}}
+\index{make\_step@{make\_step}!GradientDescent@{GradientDescent}}
+\doxysubsubsection{\texorpdfstring{make\_step()}{make\_step()}}
+{\footnotesize\ttfamily void Gradient\+Descent\+::make\+\_\+step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Makes one iteration of gradient descent. 
+
+Implements \mbox{\hyperlink{class_optimization_method_a57d8ff232ad287188f12e8de598b9dcd}{Optimization\+Method}}.
+
+\mbox{\Hypertarget{class_gradient_descent_ab7ae1c0c25d4c18c1b108d10ad72e0ce}\label{class_gradient_descent_ab7ae1c0c25d4c18c1b108d10ad72e0ce}} 
+\index{GradientDescent@{GradientDescent}!optimize@{optimize}}
+\index{optimize@{optimize}!GradientDescent@{GradientDescent}}
+\doxysubsubsection{\texorpdfstring{optimize()}{optimize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_opt_result}{Opt\+Result}} Gradient\+Descent\+::optimize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Performs gradient descent. 
+
+Implements \mbox{\hyperlink{class_optimization_method_a0919b45b310b4a052e698a726d5576e0}{Optimization\+Method}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Gradient\+Descent.\+h\item 
+Gradient\+Descent.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,25 @@
+\hypertarget{_stoh_opt_info_8h_source}{}\doxysection{Stoh\+Opt\+Info.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}OptInfo.h"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_stoh_opt_info}{StohOptInfo}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_opt_info}{OptInfo}} \{}
+\DoxyCodeLine{8 \textcolor{keyword}{private}:}
+\DoxyCodeLine{10     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n\_iter\_after\_imp;}
+\DoxyCodeLine{12     \textcolor{keywordtype}{double} last\_imp\_norm;}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_stoh_opt_info}{StohOptInfo}}();}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_stoh_opt_info}{StohOptInfo}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n\_iter\_, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n\_iter\_after\_imp, \textcolor{keywordtype}{double} last\_imp\_norm\_);}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_stoh_opt_info}{StohOptInfo}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_stoh_opt_info}{StohOptInfo}}\& other);}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_stoh_opt_info}{StohOptInfo}}(\mbox{\hyperlink{class_stoh_opt_info}{StohOptInfo}}\&\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} swap(\mbox{\hyperlink{class_stoh_opt_info}{StohOptInfo}}\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_stoh_opt_info}{StohOptInfo}}\& operator=(\mbox{\hyperlink{class_stoh_opt_info}{StohOptInfo}} other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{21     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} get\_n\_iter\_after\_imp() \textcolor{keyword}{const};}
+\DoxyCodeLine{22     \textcolor{keywordtype}{double} get\_last\_imp\_norm() \textcolor{keyword}{const};}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_stoh_opt_info}{\string~StohOptInfo}}() \{\};}
+\DoxyCodeLine{24 \};}
+\DoxyCodeLine{25 }
+
+\end{DoxyCode}

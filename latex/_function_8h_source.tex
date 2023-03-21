@@ -1,0 +1,29 @@
+\hypertarget{_function_8h_source}{}\doxysection{Function.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_function}{Function}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{11     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_function_a24c054d71859443399b8390022ba31c4}{n\_dim}} = 0;}
+\DoxyCodeLine{13     double (*\mbox{\hyperlink{class_function_a60b1fe190ede451106071837de88f6d9}{func}})(std::vector<double>) = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_function}{Function}}();}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_function}{Function}}(\textcolor{keywordtype}{double} (*func\_)(std::vector<double>), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n\_dim\_);}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_function}{Function}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_function}{Function}}\& other);}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_function}{Function}}(\mbox{\hyperlink{class_function}{Function}}\&\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \mbox{\hyperlink{class_function}{Function}}\& operator=(\mbox{\hyperlink{class_function}{Function}} other);}
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} swap(\mbox{\hyperlink{class_function}{Function}}\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{26     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_function_aa5c1f1ed3ef9abb2b7bfffacb3d6f4a4}{operator()}}(\textcolor{keyword}{const} std::vector<double>\& argument) \textcolor{keyword}{const};}
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} set\_func(\textcolor{keywordtype}{double} (*new\_func)(std::vector<double>), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} new\_n\_dim);}
+\DoxyCodeLine{28     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} get\_n\_dim() \textcolor{keyword}{const};}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_function}{\string~Function}}();}
+\DoxyCodeLine{30 \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+
+\end{DoxyCode}

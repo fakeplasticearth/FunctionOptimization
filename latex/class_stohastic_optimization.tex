@@ -1,0 +1,90 @@
+\hypertarget{class_stohastic_optimization}{}\doxysection{Stohastic\+Optimization Class Reference}
+\label{class_stohastic_optimization}\index{StohasticOptimization@{StohasticOptimization}}
+
+
+Class that performs stohastic optimization.  
+
+
+
+
+{\ttfamily \#include $<$Stohastic\+Optimization.\+h$>$}
+
+Inheritance diagram for Stohastic\+Optimization\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_stohastic_optimization}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_stohastic_optimization_adbe7eb4bcf900d02dd52951b4d3af110}\label{class_stohastic_optimization_adbe7eb4bcf900d02dd52951b4d3af110}} 
+{\bfseries Stohastic\+Optimization} (\mbox{\hyperlink{class_function}{Function}} $\ast$func\+\_\+, \mbox{\hyperlink{class_box_area}{Box\+Area}} $\ast$box\+\_\+area\+\_\+, \mbox{\hyperlink{class_stop_criterion}{Stop\+Criterion}} $\ast$stop\+\_\+criterion\+\_\+, const std\+::vector$<$ double $>$ \&first\+\_\+point\+\_\+, double delta\+\_\+, double p\+\_\+)
+\item 
+\mbox{\Hypertarget{class_stohastic_optimization_a3935d403eddcfcc381d225dbfaaabee5}\label{class_stohastic_optimization_a3935d403eddcfcc381d225dbfaaabee5}} 
+{\bfseries Stohastic\+Optimization} (const \mbox{\hyperlink{class_stohastic_optimization}{Stohastic\+Optimization}} \&other)
+\item 
+\mbox{\Hypertarget{class_stohastic_optimization_a12d48e65e4e584475772c1dd1078cf9f}\label{class_stohastic_optimization_a12d48e65e4e584475772c1dd1078cf9f}} 
+{\bfseries Stohastic\+Optimization} (\mbox{\hyperlink{class_stohastic_optimization}{Stohastic\+Optimization}} \&\&other)
+\item 
+\mbox{\Hypertarget{class_stohastic_optimization_ac1671f62944a6c3d263ba6b058a0acd2}\label{class_stohastic_optimization_ac1671f62944a6c3d263ba6b058a0acd2}} 
+void {\bfseries swap} (\mbox{\hyperlink{class_stohastic_optimization}{Stohastic\+Optimization}} \&other) noexcept
+\item 
+\mbox{\Hypertarget{class_stohastic_optimization_a1b0f158c16d726b9a1afb0cf454106fa}\label{class_stohastic_optimization_a1b0f158c16d726b9a1afb0cf454106fa}} 
+\mbox{\hyperlink{class_stohastic_optimization}{Stohastic\+Optimization}} \& {\bfseries operator=} (\mbox{\hyperlink{class_stohastic_optimization}{Stohastic\+Optimization}} other) noexcept
+\item 
+\mbox{\Hypertarget{class_stohastic_optimization_a5942848a6200ff5fb60d42ece563c846}\label{class_stohastic_optimization_a5942848a6200ff5fb60d42ece563c846}} 
+void {\bfseries set\+\_\+first\+\_\+point} (const std\+::vector$<$ double $>$ \&point)
+\item 
+void \mbox{\hyperlink{class_stohastic_optimization_a880fadd31b45f753c03ae1723e1af329}{make\+\_\+step}} ()
+\item 
+\mbox{\hyperlink{class_opt_result}{Opt\+Result}} \mbox{\hyperlink{class_stohastic_optimization_a3cafc707c2bfdec28217227f6fb00c15}{optimize}} ()
+\item 
+\mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$ \mbox{\hyperlink{class_stohastic_optimization_aaef2f5de9cb52a66b5828e8e72e7c0e0}{get\+\_\+opt\+\_\+info}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class that performs stohastic optimization. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{main_8cpp-example}{main.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_stohastic_optimization_aaef2f5de9cb52a66b5828e8e72e7c0e0}\label{class_stohastic_optimization_aaef2f5de9cb52a66b5828e8e72e7c0e0}} 
+\index{StohasticOptimization@{StohasticOptimization}!get\_opt\_info@{get\_opt\_info}}
+\index{get\_opt\_info@{get\_opt\_info}!StohasticOptimization@{StohasticOptimization}}
+\doxysubsubsection{\texorpdfstring{get\_opt\_info()}{get\_opt\_info()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$ Stohastic\+Optimization\+::get\+\_\+opt\+\_\+info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_optimization_method}{Optimization\+Method}}.
+
+\mbox{\Hypertarget{class_stohastic_optimization_a880fadd31b45f753c03ae1723e1af329}\label{class_stohastic_optimization_a880fadd31b45f753c03ae1723e1af329}} 
+\index{StohasticOptimization@{StohasticOptimization}!make\_step@{make\_step}}
+\index{make\_step@{make\_step}!StohasticOptimization@{StohasticOptimization}}
+\doxysubsubsection{\texorpdfstring{make\_step()}{make\_step()}}
+{\footnotesize\ttfamily void Stohastic\+Optimization\+::make\+\_\+step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Performs one iteration of stohastic optimization. 
+
+Implements \mbox{\hyperlink{class_optimization_method_a57d8ff232ad287188f12e8de598b9dcd}{Optimization\+Method}}.
+
+\mbox{\Hypertarget{class_stohastic_optimization_a3cafc707c2bfdec28217227f6fb00c15}\label{class_stohastic_optimization_a3cafc707c2bfdec28217227f6fb00c15}} 
+\index{StohasticOptimization@{StohasticOptimization}!optimize@{optimize}}
+\index{optimize@{optimize}!StohasticOptimization@{StohasticOptimization}}
+\doxysubsubsection{\texorpdfstring{optimize()}{optimize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_opt_result}{Opt\+Result}} Stohastic\+Optimization\+::optimize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Performs stohastic optimization. 
+
+Implements \mbox{\hyperlink{class_optimization_method_a0919b45b310b4a052e698a726d5576e0}{Optimization\+Method}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Stohastic\+Optimization.\+h\item 
+Stohastic\+Optimization.\+cpp\end{DoxyCompactItemize}

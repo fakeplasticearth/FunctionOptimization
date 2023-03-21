@@ -1,0 +1,60 @@
+\hypertarget{class_iter_only_s_s_c}{}\doxysection{Iter\+Only\+SSC Class Reference}
+\label{class_iter_only_s_s_c}\index{IterOnlySSC@{IterOnlySSC}}
+
+
+Class of stop criterion of stohastic optimization that triggeres after maximum number of iterations.  
+
+
+
+
+{\ttfamily \#include $<$Iter\+Only\+SSC.\+h$>$}
+
+Inheritance diagram for Iter\+Only\+SSC\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_iter_only_s_s_c}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_iter_only_s_s_c_a4e0bc500a9faf610b02661576b2590a4}\label{class_iter_only_s_s_c_a4e0bc500a9faf610b02661576b2590a4}} 
+{\bfseries Iter\+Only\+SSC} (unsigned int max\+\_\+n\+\_\+iter\+\_\+)
+\item 
+\mbox{\Hypertarget{class_iter_only_s_s_c_afbcc9a51815546263f75b0de5cc9239e}\label{class_iter_only_s_s_c_afbcc9a51815546263f75b0de5cc9239e}} 
+{\bfseries Iter\+Only\+SSC} (const \mbox{\hyperlink{class_iter_only_s_s_c}{Iter\+Only\+SSC}} \&other)
+\item 
+\mbox{\Hypertarget{class_iter_only_s_s_c_ab42b1f94b87eaa88c99d9a4cba50e4e4}\label{class_iter_only_s_s_c_ab42b1f94b87eaa88c99d9a4cba50e4e4}} 
+{\bfseries Iter\+Only\+SSC} (\mbox{\hyperlink{class_iter_only_s_s_c}{Iter\+Only\+SSC}} \&\&other) noexcept
+\item 
+\mbox{\Hypertarget{class_iter_only_s_s_c_a37a0ecd75b79c872ea129548c5212df3}\label{class_iter_only_s_s_c_a37a0ecd75b79c872ea129548c5212df3}} 
+void {\bfseries swap} (\mbox{\hyperlink{class_iter_only_s_s_c}{Iter\+Only\+SSC}} \&other) noexcept
+\item 
+\mbox{\Hypertarget{class_iter_only_s_s_c_a469c73263560eef5c72173fd7204cb5b}\label{class_iter_only_s_s_c_a469c73263560eef5c72173fd7204cb5b}} 
+\mbox{\hyperlink{class_iter_only_s_s_c}{Iter\+Only\+SSC}} \& {\bfseries operator=} (\mbox{\hyperlink{class_iter_only_s_s_c}{Iter\+Only\+SSC}} other) noexcept
+\item 
+bool \mbox{\hyperlink{class_iter_only_s_s_c_a5b085c7d6be2ec80326558e3700a9291}{criterion}} (\mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$opt\+\_\+info)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class of stop criterion of stohastic optimization that triggeres after maximum number of iterations. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_iter_only_s_s_c_a5b085c7d6be2ec80326558e3700a9291}\label{class_iter_only_s_s_c_a5b085c7d6be2ec80326558e3700a9291}} 
+\index{IterOnlySSC@{IterOnlySSC}!criterion@{criterion}}
+\index{criterion@{criterion}!IterOnlySSC@{IterOnlySSC}}
+\doxysubsubsection{\texorpdfstring{criterion()}{criterion()}}
+{\footnotesize\ttfamily bool Iter\+Only\+SSC\+::criterion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$}]{opt\+\_\+info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns true if stop criterion is triggered, otherwise returns false. 
+
+Implements \mbox{\hyperlink{class_stop_criterion_abf1158cb3637caf8aedf162a542b5b2a}{Stop\+Criterion}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Iter\+Only\+SSC.\+h\item 
+Iter\+Only\+SSC.\+cpp\end{DoxyCompactItemize}
