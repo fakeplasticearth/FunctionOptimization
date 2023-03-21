@@ -1,0 +1,66 @@
+\hypertarget{class_min_grad_norm_g_d_s_c}{}\doxysection{Min\+Grad\+Norm\+GDSC Class Reference}
+\label{class_min_grad_norm_g_d_s_c}\index{MinGradNormGDSC@{MinGradNormGDSC}}
+
+
+Class of stop criterion for gradient descent that triggeres if gradient norm is less than threshold or after maximum number of iterations.  
+
+
+
+
+{\ttfamily \#include $<$Min\+Grad\+Norm\+GDSC.\+h$>$}
+
+Inheritance diagram for Min\+Grad\+Norm\+GDSC\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_min_grad_norm_g_d_s_c}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_min_grad_norm_g_d_s_c_a3a83386a4ce9b6844f76e9d75b8144ba}\label{class_min_grad_norm_g_d_s_c_a3a83386a4ce9b6844f76e9d75b8144ba}} 
+{\bfseries Min\+Grad\+Norm\+GDSC} (unsigned int max\+\_\+n\+\_\+iter\+\_\+, double min\+\_\+grad\+\_\+norm\+\_\+)
+\item 
+\mbox{\Hypertarget{class_min_grad_norm_g_d_s_c_a59224c2c889f0c60539f845baecf03fe}\label{class_min_grad_norm_g_d_s_c_a59224c2c889f0c60539f845baecf03fe}} 
+{\bfseries Min\+Grad\+Norm\+GDSC} (const \mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{Min\+Grad\+Norm\+GDSC}} \&other)
+\item 
+\mbox{\Hypertarget{class_min_grad_norm_g_d_s_c_ab1f2ea3778e7266d6c98163b7086063b}\label{class_min_grad_norm_g_d_s_c_ab1f2ea3778e7266d6c98163b7086063b}} 
+{\bfseries Min\+Grad\+Norm\+GDSC} (\mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{Min\+Grad\+Norm\+GDSC}} \&\&other) noexcept
+\item 
+\mbox{\Hypertarget{class_min_grad_norm_g_d_s_c_a5c98245007653ee89e3eafd02a5f2cf0}\label{class_min_grad_norm_g_d_s_c_a5c98245007653ee89e3eafd02a5f2cf0}} 
+void {\bfseries swap} (\mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{Min\+Grad\+Norm\+GDSC}} \&other) noexcept
+\item 
+\mbox{\Hypertarget{class_min_grad_norm_g_d_s_c_a703b3f80ccbf00dcfbedde1aa6452bd8}\label{class_min_grad_norm_g_d_s_c_a703b3f80ccbf00dcfbedde1aa6452bd8}} 
+\mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{Min\+Grad\+Norm\+GDSC}} \& {\bfseries operator=} (\mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{Min\+Grad\+Norm\+GDSC}} other) noexcept
+\item 
+bool \mbox{\hyperlink{class_min_grad_norm_g_d_s_c_a66da5c9a037ff09b575237d464ee7cf4}{criterion}} (\mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$status)
+\item 
+\mbox{\Hypertarget{class_min_grad_norm_g_d_s_c_a0c4700872373e3e0776a32da4617e5f0}\label{class_min_grad_norm_g_d_s_c_a0c4700872373e3e0776a32da4617e5f0}} 
+double {\bfseries get\+\_\+min\+\_\+grad\+\_\+norm} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class of stop criterion for gradient descent that triggeres if gradient norm is less than threshold or after maximum number of iterations. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{main_8cpp-example}{main.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_min_grad_norm_g_d_s_c_a66da5c9a037ff09b575237d464ee7cf4}\label{class_min_grad_norm_g_d_s_c_a66da5c9a037ff09b575237d464ee7cf4}} 
+\index{MinGradNormGDSC@{MinGradNormGDSC}!criterion@{criterion}}
+\index{criterion@{criterion}!MinGradNormGDSC@{MinGradNormGDSC}}
+\doxysubsubsection{\texorpdfstring{criterion()}{criterion()}}
+{\footnotesize\ttfamily bool Min\+Grad\+Norm\+GDSC\+::criterion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns true if stop criterion is triggered, otherwise returns false. 
+
+Implements \mbox{\hyperlink{class_stop_criterion_abf1158cb3637caf8aedf162a542b5b2a}{Stop\+Criterion}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Min\+Grad\+Norm\+GDSC.\+h\item 
+Min\+Grad\+Norm\+GDSC.\+cpp\end{DoxyCompactItemize}

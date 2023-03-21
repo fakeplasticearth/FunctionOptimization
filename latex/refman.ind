@@ -1,0 +1,99 @@
+\begin{theindex}
+
+  \item {$\sim$GradientDescent}
+    \subitem {GradientDescent}, \hyperpage{12}
+
+  \indexspace
+
+  \item {BoxArea}, \hyperpage{7}
+    \subitem {is\_in}, \hyperpage{8}
+
+  \indexspace
+
+  \item {criterion}
+    \subitem {IterAfterImpSSC}, \hyperpage{14}
+    \subitem {IterOnlySSC}, \hyperpage{15}
+    \subitem {MinGradNormGDSC}, \hyperpage{17}
+    \subitem {MinRelImpNormGDSC}, \hyperpage{18}
+    \subitem {MinStepNormGDSC}, \hyperpage{19}
+    \subitem {NormDiffSSC}, \hyperpage{20}
+    \subitem {StopCriterion}, \hyperpage{27}
+
+  \indexspace
+
+  \item {dimensional\_limits}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Function}, \hyperpage{9}
+    \subitem {operator()}, \hyperpage{10}
+
+  \indexspace
+
+  \item {GDOptInfo}, \hyperpage{11}
+  \item {get\_opt\_info}
+    \subitem {GradientDescent}, \hyperpage{12}
+    \subitem {StohasticOptimization}, \hyperpage{24}
+  \item {GradientDescent}, \hyperpage{11}
+    \subitem {$\sim$GradientDescent}, \hyperpage{12}
+    \subitem {get\_opt\_info}, \hyperpage{12}
+    \subitem {make\_step}, \hyperpage{12}
+    \subitem {optimize}, \hyperpage{13}
+
+  \indexspace
+
+  \item {is\_in}
+    \subitem {BoxArea}, \hyperpage{8}
+  \item {IterAfterImpSSC}, \hyperpage{13}
+    \subitem {criterion}, \hyperpage{14}
+  \item {IterOnlySSC}, \hyperpage{14}
+    \subitem {criterion}, \hyperpage{15}
+
+  \indexspace
+
+  \item {make\_step}
+    \subitem {GradientDescent}, \hyperpage{12}
+    \subitem {OptimizationMethod}, \hyperpage{21}
+    \subitem {StohasticOptimization}, \hyperpage{24}
+  \item {MDFunction}, \hyperpage{15}
+    \subitem {operator()}, \hyperpage{16}
+  \item {MinGradNormGDSC}, \hyperpage{16}
+    \subitem {criterion}, \hyperpage{17}
+  \item {MinRelImpNormGDSC}, \hyperpage{17}
+    \subitem {criterion}, \hyperpage{18}
+  \item {MinStepNormGDSC}, \hyperpage{18}
+    \subitem {criterion}, \hyperpage{19}
+
+  \indexspace
+
+  \item {NormDiffSSC}, \hyperpage{19}
+    \subitem {criterion}, \hyperpage{20}
+
+  \indexspace
+
+  \item {operator()}
+    \subitem {Function}, \hyperpage{10}
+    \subitem {MDFunction}, \hyperpage{16}
+    \subitem {StopCriterion}, \hyperpage{27}
+  \item {OptimizationMethod}, \hyperpage{20}
+    \subitem {make\_step}, \hyperpage{21}
+    \subitem {optimize}, \hyperpage{22}
+  \item {optimize}
+    \subitem {GradientDescent}, \hyperpage{13}
+    \subitem {OptimizationMethod}, \hyperpage{22}
+    \subitem {StohasticOptimization}, \hyperpage{25}
+  \item {OptInfo}, \hyperpage{22}
+  \item {OptResult}, \hyperpage{23}
+
+  \indexspace
+
+  \item {StohasticOptimization}, \hyperpage{24}
+    \subitem {get\_opt\_info}, \hyperpage{24}
+    \subitem {make\_step}, \hyperpage{24}
+    \subitem {optimize}, \hyperpage{25}
+  \item {StohOptInfo}, \hyperpage{25}
+  \item {StopCriterion}, \hyperpage{26}
+    \subitem {criterion}, \hyperpage{27}
+    \subitem {operator()}, \hyperpage{27}
+
+\end{theindex}

@@ -1,0 +1,72 @@
+\hypertarget{class_box_area}{}\doxysection{Box\+Area Class Reference}
+\label{class_box_area}\index{BoxArea@{BoxArea}}
+
+
+A class that contains that stores axes limits.  
+
+
+
+
+{\ttfamily \#include $<$Box\+Area.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_box_area_a525ad0e85304aa7dded4b2863160e421}\label{class_box_area_a525ad0e85304aa7dded4b2863160e421}} 
+{\bfseries Box\+Area} (unsigned int n\+\_\+dim\+\_\+, const std\+::vector$<$ \mbox{\hyperlink{structdimensional__limits}{dimensional\+\_\+limits}} $>$ \&lims)
+\item 
+\mbox{\Hypertarget{class_box_area_a362e0410c2ab0455d5f9b401e5e35f60}\label{class_box_area_a362e0410c2ab0455d5f9b401e5e35f60}} 
+{\bfseries Box\+Area} (const \mbox{\hyperlink{class_box_area}{Box\+Area}} \&other)
+\item 
+\mbox{\Hypertarget{class_box_area_ae523f1f6c249d16db46a81f01634e422}\label{class_box_area_ae523f1f6c249d16db46a81f01634e422}} 
+{\bfseries Box\+Area} (\mbox{\hyperlink{class_box_area}{Box\+Area}} \&\&other) noexcept
+\item 
+\mbox{\Hypertarget{class_box_area_a4eb25edf22913c62e67e153075ba067a}\label{class_box_area_a4eb25edf22913c62e67e153075ba067a}} 
+unsigned int {\bfseries get\+\_\+n\+\_\+dim} () const
+\item 
+\mbox{\Hypertarget{class_box_area_a05e95bde7b1f0af7b6b6db17f97b3014}\label{class_box_area_a05e95bde7b1f0af7b6b6db17f97b3014}} 
+void {\bfseries swap} (\mbox{\hyperlink{class_box_area}{Box\+Area}} \&other) noexcept
+\item 
+\mbox{\Hypertarget{class_box_area_a8f71b67fa1010cf143913d26dad931a8}\label{class_box_area_a8f71b67fa1010cf143913d26dad931a8}} 
+\mbox{\hyperlink{class_box_area}{Box\+Area}} \& {\bfseries operator=} (\mbox{\hyperlink{class_box_area}{Box\+Area}} other) noexcept
+\item 
+\mbox{\Hypertarget{class_box_area_abbd2f245c5c10471e03dbc782135d04d}\label{class_box_area_abbd2f245c5c10471e03dbc782135d04d}} 
+\mbox{\hyperlink{structdimensional__limits}{dimensional\+\_\+limits}} {\bfseries get\+\_\+limits} (unsigned int i) const
+\item 
+bool \mbox{\hyperlink{class_box_area_a0535151e69a3abbc93d0d0650bcbcc66}{is\+\_\+in}} (const std\+::vector$<$ double $>$ \&point) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_box_area_a4497ba99d258a531bc8a852b9795fb39}\label{class_box_area_a4497ba99d258a531bc8a852b9795fb39}} 
+unsigned int {\bfseries n\+\_\+dim} = 0
+\begin{DoxyCompactList}\small\item\em Number of dimensions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_box_area_a0cd49ba7accffbcb26457000a556123f}\label{class_box_area_a0cd49ba7accffbcb26457000a556123f}} 
+std\+::vector$<$ \mbox{\hyperlink{structdimensional__limits}{dimensional\+\_\+limits}} $>$ {\bfseries limits}
+\begin{DoxyCompactList}\small\item\em Axes limits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that contains that stores axes limits. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{main_8cpp-example}{main.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_box_area_a0535151e69a3abbc93d0d0650bcbcc66}\label{class_box_area_a0535151e69a3abbc93d0d0650bcbcc66}} 
+\index{BoxArea@{BoxArea}!is\_in@{is\_in}}
+\index{is\_in@{is\_in}!BoxArea@{BoxArea}}
+\doxysubsubsection{\texorpdfstring{is\_in()}{is\_in()}}
+{\footnotesize\ttfamily bool Box\+Area\+::is\+\_\+in (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{point }\end{DoxyParamCaption}) const}
+
+Checks if point is in area. 
+\begin{DoxyParams}{Parameters}
+{\em point} & Vector that contains coordinates of point. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Box\+Area.\+h\item 
+Box\+Area.\+cpp\end{DoxyCompactItemize}

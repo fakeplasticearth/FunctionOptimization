@@ -1,0 +1,109 @@
+\hypertarget{class_optimization_method}{}\doxysection{Optimization\+Method Class Reference}
+\label{class_optimization_method}\index{OptimizationMethod@{OptimizationMethod}}
+
+
+Abstract class for optimization methods.  
+
+
+
+
+{\ttfamily \#include $<$Optimization\+Method.\+h$>$}
+
+Inheritance diagram for Optimization\+Method\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_optimization_method}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_optimization_method_a0a71ffaf1b2cef84eed6389ce06711d4}\label{class_optimization_method_a0a71ffaf1b2cef84eed6389ce06711d4}} 
+virtual \mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$ {\bfseries get\+\_\+opt\+\_\+info} () const =0
+\item 
+virtual \mbox{\hyperlink{class_opt_result}{Opt\+Result}} \mbox{\hyperlink{class_optimization_method_a0919b45b310b4a052e698a726d5576e0}{optimize}} ()=0
+\item 
+\mbox{\Hypertarget{class_optimization_method_a04aa4fb007ca930f3c357730874e7f01}\label{class_optimization_method_a04aa4fb007ca930f3c357730874e7f01}} 
+unsigned int {\bfseries get\+\_\+n\+\_\+dim} () const
+\item 
+\mbox{\Hypertarget{class_optimization_method_ac61f7dd9dd45c5d463f01470db997464}\label{class_optimization_method_ac61f7dd9dd45c5d463f01470db997464}} 
+unsigned int {\bfseries get\+\_\+n\+\_\+iter} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_optimization_method_a99ae7eff456d9ecda94b7adecc10c141}\label{class_optimization_method_a99ae7eff456d9ecda94b7adecc10c141}} 
+{\bfseries Optimization\+Method} (\mbox{\hyperlink{class_function}{Function}} $\ast$func\+\_\+, \mbox{\hyperlink{class_box_area}{Box\+Area}} $\ast$box\+\_\+area\+\_\+, \mbox{\hyperlink{class_stop_criterion}{Stop\+Criterion}} $\ast$stop\+\_\+criterion\+\_\+)
+\item 
+\mbox{\Hypertarget{class_optimization_method_a14a857fa54e09efb5c287364813ac73d}\label{class_optimization_method_a14a857fa54e09efb5c287364813ac73d}} 
+{\bfseries Optimization\+Method} (const \mbox{\hyperlink{class_optimization_method}{Optimization\+Method}} \&other)
+\item 
+\mbox{\Hypertarget{class_optimization_method_abd514201643cfd87198c30b46da57a57}\label{class_optimization_method_abd514201643cfd87198c30b46da57a57}} 
+{\bfseries Optimization\+Method} (\mbox{\hyperlink{class_optimization_method}{Optimization\+Method}} \&\&other) noexcept
+\item 
+\mbox{\Hypertarget{class_optimization_method_ac376ec577e3c3f36c350fda1ea4c6156}\label{class_optimization_method_ac376ec577e3c3f36c350fda1ea4c6156}} 
+void {\bfseries swap} (\mbox{\hyperlink{class_optimization_method}{Optimization\+Method}} \&other) noexcept
+\item 
+virtual void \mbox{\hyperlink{class_optimization_method_a57d8ff232ad287188f12e8de598b9dcd}{make\+\_\+step}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_optimization_method_afdb7e3633fd8253d8cb623bd5d28ea75}\label{class_optimization_method_afdb7e3633fd8253d8cb623bd5d28ea75}} 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ {\bfseries point\+\_\+history}
+\begin{DoxyCompactList}\small\item\em Vector that stores all points of optimization process. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_optimization_method_a584762c8be766108e9acc4d668f801c2}\label{class_optimization_method_a584762c8be766108e9acc4d668f801c2}} 
+unsigned int {\bfseries n\+\_\+iter} = 0
+\begin{DoxyCompactList}\small\item\em Current number of iterations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_optimization_method_a5b31674ed9fe41bddafe9628b698bdc2}\label{class_optimization_method_a5b31674ed9fe41bddafe9628b698bdc2}} 
+unsigned int {\bfseries n\+\_\+dim} = 0
+\begin{DoxyCompactList}\small\item\em Number of dimensions of points. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_optimization_method_a1a3554c9fcbd0303f2adc192d09c9474}\label{class_optimization_method_a1a3554c9fcbd0303f2adc192d09c9474}} 
+\mbox{\hyperlink{class_box_area}{Box\+Area}} $\ast$ {\bfseries box\+\_\+area} = nullptr
+\begin{DoxyCompactList}\small\item\em Limits of search area. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_optimization_method_a216ec595af9754b6198369854f072700}\label{class_optimization_method_a216ec595af9754b6198369854f072700}} 
+\mbox{\hyperlink{class_function}{Function}} $\ast$ {\bfseries func} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer on function that should be optimized. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_optimization_method_a320411ef4368b0d3adcfb37159d50d58}\label{class_optimization_method_a320411ef4368b0d3adcfb37159d50d58}} 
+\mbox{\hyperlink{class_stop_criterion}{Stop\+Criterion}} $\ast$ {\bfseries stop\+\_\+criterion} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer on stop criterion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class for optimization methods. 
+
+Methods optimize, make\+\_\+step and get\+\_\+opt\+\_\+info should be defined in inheritors. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{main_8cpp-example}{main.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_optimization_method_a57d8ff232ad287188f12e8de598b9dcd}\label{class_optimization_method_a57d8ff232ad287188f12e8de598b9dcd}} 
+\index{OptimizationMethod@{OptimizationMethod}!make\_step@{make\_step}}
+\index{make\_step@{make\_step}!OptimizationMethod@{OptimizationMethod}}
+\doxysubsubsection{\texorpdfstring{make\_step()}{make\_step()}}
+{\footnotesize\ttfamily virtual void Optimization\+Method\+::make\+\_\+step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Abstract method that makes one iteration of optimization. 
+
+Implemented in \mbox{\hyperlink{class_gradient_descent_a7a10ec556f433f9b0c803d1d77360fa6}{Gradient\+Descent}}, and \mbox{\hyperlink{class_stohastic_optimization_a880fadd31b45f753c03ae1723e1af329}{Stohastic\+Optimization}}.
+
+\mbox{\Hypertarget{class_optimization_method_a0919b45b310b4a052e698a726d5576e0}\label{class_optimization_method_a0919b45b310b4a052e698a726d5576e0}} 
+\index{OptimizationMethod@{OptimizationMethod}!optimize@{optimize}}
+\index{optimize@{optimize}!OptimizationMethod@{OptimizationMethod}}
+\doxysubsubsection{\texorpdfstring{optimize()}{optimize()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_opt_result}{Opt\+Result}} Optimization\+Method\+::optimize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract method that performs optimization. 
+
+Implemented in \mbox{\hyperlink{class_gradient_descent_ab7ae1c0c25d4c18c1b108d10ad72e0ce}{Gradient\+Descent}}, and \mbox{\hyperlink{class_stohastic_optimization_a3cafc707c2bfdec28217227f6fb00c15}{Stohastic\+Optimization}}.
+
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{main_8cpp-example}{main.\+cpp}}.\end{Desc}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Optimization\+Method.\+h\item 
+Optimization\+Method.\+cpp\end{DoxyCompactItemize}

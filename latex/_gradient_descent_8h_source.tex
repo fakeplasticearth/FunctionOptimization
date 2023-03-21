@@ -1,0 +1,49 @@
+\hypertarget{_gradient_descent_8h_source}{}\doxysection{Gradient\+Descent.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}OptimizationMethod.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}MDFunction.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}GDOptInfo.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}MinGradNormGDSC.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}MinStepNormGDSC.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}MinRelImpNormGDSC.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_gradient_descent}{GradientDescent}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_optimization_method}{OptimizationMethod}} \{}
+\DoxyCodeLine{13 \textcolor{keyword}{private}:}
+\DoxyCodeLine{15     std::vector<double> value\_history;}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_m_d_function}{MDFunction}}* grad = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{19     std::vector<double> first\_point;}
+\DoxyCodeLine{21     \textcolor{keywordtype}{double} curr\_min\_value;}
+\DoxyCodeLine{23     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} lr\_steps;}
+\DoxyCodeLine{25     \textcolor{keywordtype}{double} grad\_norm;}
+\DoxyCodeLine{27     \textcolor{keywordtype}{double} last\_step\_norm;}
+\DoxyCodeLine{29     \textcolor{keywordtype}{double} rel\_imp\_norm;}
+\DoxyCodeLine{31     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} max\_updates\_lr = 10;}
+\DoxyCodeLine{33     \textcolor{keywordtype}{double} scale = 10.;}
+\DoxyCodeLine{35     std::string norm\_name;}
+\DoxyCodeLine{36 \textcolor{keyword}{public}:}
+\DoxyCodeLine{37     \mbox{\hyperlink{class_gradient_descent}{GradientDescent}}();}
+\DoxyCodeLine{38     \mbox{\hyperlink{class_gradient_descent}{GradientDescent}}(\mbox{\hyperlink{class_function}{Function}}* func\_, \mbox{\hyperlink{class_m_d_function}{MDFunction}}* grad\_, \mbox{\hyperlink{class_box_area}{BoxArea}}* box\_area\_, \mbox{\hyperlink{class_stop_criterion}{StopCriterion}}* stop\_criterion\_, }
+\DoxyCodeLine{39         \textcolor{keyword}{const} std::vector<double>\& first\_point\_, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} lr\_steps\_, std::string norm\_name\_);}
+\DoxyCodeLine{40     \mbox{\hyperlink{class_gradient_descent}{GradientDescent}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_gradient_descent}{GradientDescent}}\& other);}
+\DoxyCodeLine{41     \mbox{\hyperlink{class_gradient_descent}{GradientDescent}}(\mbox{\hyperlink{class_gradient_descent}{GradientDescent}}\&\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} swap(\mbox{\hyperlink{class_gradient_descent}{GradientDescent}}\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{44     \mbox{\hyperlink{class_gradient_descent}{GradientDescent}}\& operator=(\mbox{\hyperlink{class_gradient_descent}{GradientDescent}} other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} set\_first\_point(\textcolor{keyword}{const} std::vector<double>\& point);}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gradient_descent_a7a10ec556f433f9b0c803d1d77360fa6}{make\_step}}();}
+\DoxyCodeLine{53     \mbox{\hyperlink{class_opt_result}{OptResult}} \mbox{\hyperlink{class_gradient_descent_ab7ae1c0c25d4c18c1b108d10ad72e0ce}{optimize}}();}
+\DoxyCodeLine{54     \mbox{\hyperlink{class_opt_info}{OptInfo}}* get\_opt\_info() \textcolor{keyword}{const};}
+\DoxyCodeLine{58     \mbox{\hyperlink{class_gradient_descent_adaacebc37d3cd518b74d52f417da1118}{\string~GradientDescent}}();}
+\DoxyCodeLine{59 \};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{64 \textcolor{keywordtype}{double} l2\_norm(std::vector<double> arg);}
+\DoxyCodeLine{68 \textcolor{keywordtype}{double} l1\_norm(std::vector<double> arg);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{73 std::vector<double> operator*(\textcolor{keywordtype}{double} scalar, \textcolor{keyword}{const} std::vector<double>\& vec);}
+\DoxyCodeLine{77 std::vector<double> operator+(\textcolor{keyword}{const} std::vector<double>\& vec1, \textcolor{keyword}{const} std::vector<double>\& vec2);}
+\DoxyCodeLine{81 std::vector<double> operator-\/(\textcolor{keyword}{const} std::vector<double>\& vec1, \textcolor{keyword}{const} std::vector<double>\& vec2);}
+\DoxyCodeLine{82 }
+
+\end{DoxyCode}

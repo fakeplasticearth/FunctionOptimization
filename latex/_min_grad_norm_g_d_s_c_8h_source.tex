@@ -1,0 +1,25 @@
+\hypertarget{_min_grad_norm_g_d_s_c_8h_source}{}\doxysection{Min\+Grad\+Norm\+GDSC.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}StopCriterion.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}GDOptInfo.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{MinGradNormGDSC}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_stop_criterion}{StopCriterion}} \{}
+\DoxyCodeLine{10 \textcolor{keyword}{private}:}
+\DoxyCodeLine{12     \textcolor{keywordtype}{double} min\_grad\_norm;}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{MinGradNormGDSC}}();}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{MinGradNormGDSC}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} max\_n\_iter\_, \textcolor{keywordtype}{double} min\_grad\_norm\_);}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{MinGradNormGDSC}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{MinGradNormGDSC}}\& other);}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{MinGradNormGDSC}}(\mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{MinGradNormGDSC}}\&\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} swap(\mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{MinGradNormGDSC}}\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{MinGradNormGDSC}}\& operator=(\mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{MinGradNormGDSC}} other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{24     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_min_grad_norm_g_d_s_c_a66da5c9a037ff09b575237d464ee7cf4}{criterion}}(\mbox{\hyperlink{class_opt_info}{OptInfo}}* status);}
+\DoxyCodeLine{25     \textcolor{keywordtype}{double} get\_min\_grad\_norm() \textcolor{keyword}{const};}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{\string~MinGradNormGDSC}}();}
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{28 }
+
+\end{DoxyCode}

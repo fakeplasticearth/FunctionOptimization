@@ -1,0 +1,27 @@
+\hypertarget{_g_d_opt_info_8h_source}{}\doxysection{GDOpt\+Info.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}OptInfo.h"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_g_d_opt_info}{GDOptInfo}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_opt_info}{OptInfo}} \{}
+\DoxyCodeLine{9 \textcolor{keyword}{private}:}
+\DoxyCodeLine{11     \textcolor{keywordtype}{double} grad\_norm;}
+\DoxyCodeLine{13     \textcolor{keywordtype}{double} last\_step\_norm;}
+\DoxyCodeLine{15     \textcolor{keywordtype}{double} rel\_imp\_norm;}
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_g_d_opt_info}{GDOptInfo}}();}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_g_d_opt_info}{GDOptInfo}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n\_iter\_, \textcolor{keywordtype}{double} grad\_norm\_, \textcolor{keywordtype}{double} last\_step\_norm\_, \textcolor{keywordtype}{double} rel\_imp\_norm\_);}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_g_d_opt_info}{GDOptInfo}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_g_d_opt_info}{GDOptInfo}}\& other);}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_g_d_opt_info}{GDOptInfo}}(\mbox{\hyperlink{class_g_d_opt_info}{GDOptInfo}}\&\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} swap(\mbox{\hyperlink{class_g_d_opt_info}{GDOptInfo}}\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_g_d_opt_info}{GDOptInfo}}\& operator=(\mbox{\hyperlink{class_g_d_opt_info}{GDOptInfo}} other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{24     \textcolor{keywordtype}{double} get\_grad\_norm() \textcolor{keyword}{const};}
+\DoxyCodeLine{25     \textcolor{keywordtype}{double} get\_last\_step\_norm() \textcolor{keyword}{const};}
+\DoxyCodeLine{26     \textcolor{keywordtype}{double} get\_rel\_imp\_norm() \textcolor{keyword}{const};}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_g_d_opt_info}{\string~GDOptInfo}}();}
+\DoxyCodeLine{28 \};}
+\DoxyCodeLine{29 }
+
+\end{DoxyCode}

@@ -1,0 +1,26 @@
+\hypertarget{_stop_criterion_8h_source}{}\doxysection{Stop\+Criterion.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}OptInfo.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_stop_criterion}{StopCriterion}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{13     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_stop_criterion_a63f740be043cee8d1872ae375a8db1f4}{max\_n\_iter}};}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \mbox{\hyperlink{class_stop_criterion}{StopCriterion}}();}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_stop_criterion}{StopCriterion}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} max\_n\_iter\_);}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_stop_criterion}{StopCriterion}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_stop_criterion}{StopCriterion}}\& other);}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_stop_criterion}{StopCriterion}}(\mbox{\hyperlink{class_stop_criterion}{StopCriterion}}\&\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} swap(\mbox{\hyperlink{class_stop_criterion}{StopCriterion}}\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_stop_criterion_abf1158cb3637caf8aedf162a542b5b2a}{criterion}}(\mbox{\hyperlink{class_opt_info}{OptInfo}}* opt\_info) = 0;}
+\DoxyCodeLine{29     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_stop_criterion_a29c8d6a7c200b09baff0135b92b1a9aa}{operator()}}(\mbox{\hyperlink{class_opt_info}{OptInfo}}* opt\_info);}
+\DoxyCodeLine{30     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_stop_criterion}{\string~StopCriterion}}() \{\};}
+\DoxyCodeLine{31 \};}
+\DoxyCodeLine{32 }
+
+\end{DoxyCode}

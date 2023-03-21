@@ -1,0 +1,65 @@
+\hypertarget{class_norm_diff_s_s_c}{}\doxysection{Norm\+Diff\+SSC Class Reference}
+\label{class_norm_diff_s_s_c}\index{NormDiffSSC@{NormDiffSSC}}
+
+
+Class of stop criterion for stohastic optimization that triggeres if last improvement norm is less than threshold or after maximum number of iterations.  
+
+
+
+
+{\ttfamily \#include $<$Norm\+Diff\+SSC.\+h$>$}
+
+Inheritance diagram for Norm\+Diff\+SSC\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_norm_diff_s_s_c}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_norm_diff_s_s_c_a6474c7f2a4edff5baa2043edcf9452d0}\label{class_norm_diff_s_s_c_a6474c7f2a4edff5baa2043edcf9452d0}} 
+{\bfseries Norm\+Diff\+SSC} (unsigned int max\+\_\+n\+\_\+iter\+\_\+, double min\+\_\+last\+\_\+imp\+\_\+norm\+\_\+)
+\item 
+\mbox{\Hypertarget{class_norm_diff_s_s_c_a14799b7366c8ade33e7fa00093ff972c}\label{class_norm_diff_s_s_c_a14799b7366c8ade33e7fa00093ff972c}} 
+{\bfseries Norm\+Diff\+SSC} (const \mbox{\hyperlink{class_norm_diff_s_s_c}{Norm\+Diff\+SSC}} \&other)
+\item 
+\mbox{\Hypertarget{class_norm_diff_s_s_c_a0a2675694d94e6effc7ee28d31cd9371}\label{class_norm_diff_s_s_c_a0a2675694d94e6effc7ee28d31cd9371}} 
+{\bfseries Norm\+Diff\+SSC} (\mbox{\hyperlink{class_norm_diff_s_s_c}{Norm\+Diff\+SSC}} \&\&other) noexcept
+\item 
+\mbox{\Hypertarget{class_norm_diff_s_s_c_a6c96a530c457c70f006226c953927c45}\label{class_norm_diff_s_s_c_a6c96a530c457c70f006226c953927c45}} 
+void {\bfseries swap} (\mbox{\hyperlink{class_norm_diff_s_s_c}{Norm\+Diff\+SSC}} \&other) noexcept
+\item 
+\mbox{\Hypertarget{class_norm_diff_s_s_c_a2819b71ac0b2d25089ea57e1b36dad3f}\label{class_norm_diff_s_s_c_a2819b71ac0b2d25089ea57e1b36dad3f}} 
+\mbox{\hyperlink{class_norm_diff_s_s_c}{Norm\+Diff\+SSC}} \& {\bfseries operator=} (\mbox{\hyperlink{class_norm_diff_s_s_c}{Norm\+Diff\+SSC}} other) noexcept
+\item 
+bool \mbox{\hyperlink{class_norm_diff_s_s_c_a007448444a978b1f956b010d60978824}{criterion}} (\mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$opt\+\_\+info)
+\item 
+\mbox{\Hypertarget{class_norm_diff_s_s_c_a714a31b427463ddc64ebb1a3891fbd72}\label{class_norm_diff_s_s_c_a714a31b427463ddc64ebb1a3891fbd72}} 
+double {\bfseries get\+\_\+min\+\_\+last\+\_\+imp\+\_\+norm} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class of stop criterion for stohastic optimization that triggeres if last improvement norm is less than threshold or after maximum number of iterations. 
+
+Last improvement norm is norm of difference of current value of function and previous value of function. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_norm_diff_s_s_c_a007448444a978b1f956b010d60978824}\label{class_norm_diff_s_s_c_a007448444a978b1f956b010d60978824}} 
+\index{NormDiffSSC@{NormDiffSSC}!criterion@{criterion}}
+\index{criterion@{criterion}!NormDiffSSC@{NormDiffSSC}}
+\doxysubsubsection{\texorpdfstring{criterion()}{criterion()}}
+{\footnotesize\ttfamily bool Norm\+Diff\+SSC\+::criterion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$}]{opt\+\_\+info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns true if stop criterion is triggered, otherwise returns false. 
+
+Implements \mbox{\hyperlink{class_stop_criterion_abf1158cb3637caf8aedf162a542b5b2a}{Stop\+Criterion}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Norm\+Diff\+SSC.\+h\item 
+Norm\+Diff\+SSC.\+cpp\end{DoxyCompactItemize}

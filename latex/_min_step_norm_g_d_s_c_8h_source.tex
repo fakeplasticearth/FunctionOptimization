@@ -1,0 +1,25 @@
+\hypertarget{_min_step_norm_g_d_s_c_8h_source}{}\doxysection{Min\+Step\+Norm\+GDSC.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}StopCriterion.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}GDOptInfo.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_min_step_norm_g_d_s_c}{MinStepNormGDSC}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_stop_criterion}{StopCriterion}} \{}
+\DoxyCodeLine{11 \textcolor{keyword}{private}:}
+\DoxyCodeLine{13     \textcolor{keywordtype}{double} min\_step\_norm;}
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_min_step_norm_g_d_s_c}{MinStepNormGDSC}}();}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_min_step_norm_g_d_s_c}{MinStepNormGDSC}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} max\_n\_iter\_, \textcolor{keywordtype}{double} min\_step\_norm\_);}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_min_step_norm_g_d_s_c}{MinStepNormGDSC}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_min_step_norm_g_d_s_c}{MinStepNormGDSC}}\& other);}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_min_step_norm_g_d_s_c}{MinStepNormGDSC}}(\mbox{\hyperlink{class_min_step_norm_g_d_s_c}{MinStepNormGDSC}}\&\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} swap(\mbox{\hyperlink{class_min_step_norm_g_d_s_c}{MinStepNormGDSC}}\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_min_step_norm_g_d_s_c}{MinStepNormGDSC}}\& operator=(\mbox{\hyperlink{class_min_step_norm_g_d_s_c}{MinStepNormGDSC}} other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{25     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_min_step_norm_g_d_s_c_a6538358d8db30326b51e976cbd6c5768}{criterion}}(\mbox{\hyperlink{class_opt_info}{OptInfo}}* status);}
+\DoxyCodeLine{26     \textcolor{keywordtype}{double} get\_min\_step\_norm() \textcolor{keyword}{const};}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_min_step_norm_g_d_s_c}{\string~MinStepNormGDSC}}();}
+\DoxyCodeLine{28 \};}
+\DoxyCodeLine{29 }
+
+\end{DoxyCode}

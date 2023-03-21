@@ -1,0 +1,27 @@
+\hypertarget{_opt_result_8h_source}{}\doxysection{Opt\+Result.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_opt_result}{OptResult}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9 \textcolor{keyword}{private}:}
+\DoxyCodeLine{11     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n\_iter;}
+\DoxyCodeLine{13     std::vector<double> min\_point;}
+\DoxyCodeLine{15     \textcolor{keywordtype}{double} min\_value;}
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_opt_result}{OptResult}}();}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_opt_result}{OptResult}}(\textcolor{keyword}{const} std::vector<double>\& min\_point\_, \textcolor{keywordtype}{double} min\_value\_, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n\_iter\_);}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_opt_result}{OptResult}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_opt_result}{OptResult}}\& other);}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_opt_result}{OptResult}}(\mbox{\hyperlink{class_opt_result}{OptResult}}\&\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} swap(\mbox{\hyperlink{class_opt_result}{OptResult}}\& other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_opt_result}{OptResult}}\& operator=(\mbox{\hyperlink{class_opt_result}{OptResult}} other) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{24     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} get\_n\_iter() \textcolor{keyword}{const};}
+\DoxyCodeLine{25     std::vector<double> get\_min\_point() \textcolor{keyword}{const};}
+\DoxyCodeLine{26     \textcolor{keywordtype}{double} get\_min\_value() \textcolor{keyword}{const};}
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{28 }
+
+\end{DoxyCode}

@@ -1,0 +1,105 @@
+\hypertarget{main_8cpp-example}{}\doxysection{main.\+cpp}
+An example of gradient descent
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{comment}{/* \(\backslash\)file main.cpp}}
+\DoxyCodeLine{\textcolor{comment}{* }}
+\DoxyCodeLine{\textcolor{comment}{*/}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define \_CRT\_SECURE\_NO\_WARNINGS}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define \_USE\_MATH\_DEFINES}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <cstdio>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}../StohasticOptimization.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}../GradientDescent.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//https://en.wikipedia.org/wiki/Rosenbrock\_function}}
+\DoxyCodeLine{\textcolor{comment}{// Minimum point: \{1, 1\}}}
+\DoxyCodeLine{\textcolor{keywordtype}{double} rosenbrock\_func2(std::vector<double> arg) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} pow(1 -\/ arg[0], 2) + 100 * pow(arg[1] -\/ pow(arg[0], 2), 2);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{std::vector<double> rosenbrock\_func2\_grad(std::vector<double> arg) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} std::vector<double>(\{ 2 * (200 * pow(arg[0], 3) -\/ 200 * arg[0] * arg[1] + arg[0] -\/ 1), 200 * (arg[1] -\/ pow(arg[0], 2)) \});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main() \{}
+\DoxyCodeLine{    \textcolor{comment}{/*}}
+\DoxyCodeLine{\textcolor{comment}{    * Lets perform a stohastic optimization of Rosenbrock function.}}
+\DoxyCodeLine{\textcolor{comment}{    */}}
+\DoxyCodeLine{    \mbox{\hyperlink{structdimensional__limits}{dimensional\_limits}} x\_limits(-\/10, 10), y\_limits(-\/10, 10); \textcolor{comment}{// Dimensional limits}}
+\DoxyCodeLine{    \mbox{\hyperlink{class_box_area}{BoxArea}} box\_area(2, \{ x\_limits, y\_limits \}); \textcolor{comment}{// Area of search}}
+\DoxyCodeLine{    std::vector<double> first\_point = \{-\/4.5, 3.4\}; \textcolor{comment}{// Initial point of search}}
+\DoxyCodeLine{    \mbox{\hyperlink{class_function}{Function}} func(rosenbrock\_func2, 2); \textcolor{comment}{// Function that we will optimize}}
+\DoxyCodeLine{    \textcolor{comment}{/*}}
+\DoxyCodeLine{\textcolor{comment}{    * Lets set stop criterion. Let the maximum number of iterations be 5000 and maximum number of iterations after last improvement be 200.}}
+\DoxyCodeLine{\textcolor{comment}{    */}}
+\DoxyCodeLine{    \mbox{\hyperlink{class_stop_criterion}{StopCriterion}}* stop\_criterion = \textcolor{keyword}{new} \mbox{\hyperlink{class_iter_after_imp_s_s_c}{IterAfterImpSSC}}(5000, 200);}
+\DoxyCodeLine{    \textcolor{keywordtype}{double} delta = 1; \textcolor{comment}{// Delta parameter}}
+\DoxyCodeLine{    \textcolor{keywordtype}{double} p = 0.5; \textcolor{comment}{// Probability parameter}}
+\DoxyCodeLine{    \textcolor{comment}{/*}}
+\DoxyCodeLine{\textcolor{comment}{    * Lets set optimization method with the parameters.}}
+\DoxyCodeLine{\textcolor{comment}{    */}}
+\DoxyCodeLine{    \mbox{\hyperlink{class_optimization_method}{OptimizationMethod}}* optimization\_method = \textcolor{keyword}{new} \mbox{\hyperlink{class_stohastic_optimization}{StohasticOptimization}}(\&func, \&box\_area, stop\_criterion, first\_point, delta, p);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{/*}}
+\DoxyCodeLine{\textcolor{comment}{    * Perform optimization.}}
+\DoxyCodeLine{\textcolor{comment}{    */}}
+\DoxyCodeLine{    \mbox{\hyperlink{class_opt_result}{OptResult}} opt\_result = optimization\_method-\/>\mbox{\hyperlink{class_optimization_method_a0919b45b310b4a052e698a726d5576e0}{optimize}}();}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"{}Optimization result: \(\backslash\)n"{}};}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"{}\(\backslash\)t Iteration num: "{}} << opt\_result.get\_n\_iter();}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)t Optimal point: "{}};}
+\DoxyCodeLine{    std::vector<double> opt\_point = opt\_result.get\_min\_point();}
+\DoxyCodeLine{    \textcolor{comment}{// Print coordinates of min point.}}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < opt\_point.size(); ++i) \{}
+\DoxyCodeLine{        std::cout << opt\_point[i] << \textcolor{charliteral}{' '};}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)t Function value: "{}} << opt\_result.get\_min\_value() << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keyword}{delete} optimization\_method;}
+\DoxyCodeLine{    \textcolor{keyword}{delete} stop\_criterion;}
+\DoxyCodeLine{    \textcolor{comment}{/*}}
+\DoxyCodeLine{\textcolor{comment}{    * Now lets perform a gradient descent}}
+\DoxyCodeLine{\textcolor{comment}{    */}}
+\DoxyCodeLine{    \mbox{\hyperlink{structdimensional__limits}{dimensional\_limits}} x\_limits2(-\/5, 5), y\_limits2(-\/10, 15); \textcolor{comment}{// Dimensional limits}}
+\DoxyCodeLine{    \mbox{\hyperlink{class_box_area}{BoxArea}} box\_area2(2, \{ x\_limits2, y\_limits2 \}); \textcolor{comment}{// Area of search}}
+\DoxyCodeLine{    std::vector<double> first\_point2 = \{ -\/3, 3 \}; \textcolor{comment}{// Initial point of search}}
+\DoxyCodeLine{    \mbox{\hyperlink{class_function}{Function}} func2(rosenbrock\_func2, 2); \textcolor{comment}{// Function that we will optimize}}
+\DoxyCodeLine{    \mbox{\hyperlink{class_m_d_function}{MDFunction}} grad(rosenbrock\_func2\_grad, 2); \textcolor{comment}{// Gradient of function}}
+\DoxyCodeLine{    std::string norm\_name = \textcolor{stringliteral}{"{}l2"{}}; \textcolor{comment}{// Lets use l2 norm}}
+\DoxyCodeLine{    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} steps = 100; \textcolor{comment}{// Lets do 100 steps on each iteration}}
+\DoxyCodeLine{    \textcolor{comment}{/*}}
+\DoxyCodeLine{\textcolor{comment}{    * Lets set stop criterion. Let the maximum number of iterations be 5000 and min grad norm threshold be 1e-\/6.}}
+\DoxyCodeLine{\textcolor{comment}{    */}}
+\DoxyCodeLine{    \mbox{\hyperlink{class_stop_criterion}{StopCriterion}}* stop\_criterion2 = \textcolor{keyword}{new} \mbox{\hyperlink{class_min_grad_norm_g_d_s_c}{MinGradNormGDSC}}(5000, 1e-\/6);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{/*}}
+\DoxyCodeLine{\textcolor{comment}{    * Lets set optimization method with the parameters}}
+\DoxyCodeLine{\textcolor{comment}{    */}}
+\DoxyCodeLine{    \mbox{\hyperlink{class_optimization_method}{OptimizationMethod}}* optimization\_method2 = \textcolor{keyword}{new} \mbox{\hyperlink{class_gradient_descent}{GradientDescent}}(\&func2, \&grad, \&box\_area2, stop\_criterion2, first\_point2, steps, norm\_name);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{/*}}
+\DoxyCodeLine{\textcolor{comment}{    * Perform optimization.}}
+\DoxyCodeLine{\textcolor{comment}{    */}}
+\DoxyCodeLine{    opt\_result = optimization\_method2-\/>\mbox{\hyperlink{class_optimization_method_a0919b45b310b4a052e698a726d5576e0}{optimize}}();}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"{}Optimization result: \(\backslash\)n"{}};}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"{}\(\backslash\)t Iteration num: "{}} << opt\_result.get\_n\_iter();}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)t Optimal point: "{}};}
+\DoxyCodeLine{    opt\_point = opt\_result.get\_min\_point();}
+\DoxyCodeLine{    \textcolor{comment}{// Print coordinates of min point.}}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < opt\_point.size(); ++i) \{}
+\DoxyCodeLine{        std::cout << opt\_point[i] << \textcolor{charliteral}{' '};}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)t Function value: "{}} << opt\_result.get\_min\_value() << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keyword}{delete} optimization\_method2;}
+\DoxyCodeLine{    \textcolor{keyword}{delete} stop\_criterion2;}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

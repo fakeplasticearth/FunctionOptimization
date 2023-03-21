@@ -1,0 +1,78 @@
+\hypertarget{class_stop_criterion}{}\doxysection{Stop\+Criterion Class Reference}
+\label{class_stop_criterion}\index{StopCriterion@{StopCriterion}}
+
+
+Abstract class that used for performing a stop of optimization process.  
+
+
+
+
+{\ttfamily \#include $<$Stop\+Criterion.\+h$>$}
+
+Inheritance diagram for Stop\+Criterion\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.305361cm]{class_stop_criterion}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_stop_criterion_abf1158cb3637caf8aedf162a542b5b2a}{criterion}} (\mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$opt\+\_\+info)=0
+\item 
+bool \mbox{\hyperlink{class_stop_criterion_a29c8d6a7c200b09baff0135b92b1a9aa}{operator()}} (\mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$opt\+\_\+info)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_stop_criterion_a40ce9b960adfc4ffb8204505c599dab7}\label{class_stop_criterion_a40ce9b960adfc4ffb8204505c599dab7}} 
+{\bfseries Stop\+Criterion} (unsigned int max\+\_\+n\+\_\+iter\+\_\+)
+\item 
+\mbox{\Hypertarget{class_stop_criterion_ac543a76e634697e0da1f2d9990c6961b}\label{class_stop_criterion_ac543a76e634697e0da1f2d9990c6961b}} 
+{\bfseries Stop\+Criterion} (const \mbox{\hyperlink{class_stop_criterion}{Stop\+Criterion}} \&other)
+\item 
+\mbox{\Hypertarget{class_stop_criterion_a98d6f68858877e127c2239d4734a9b0e}\label{class_stop_criterion_a98d6f68858877e127c2239d4734a9b0e}} 
+{\bfseries Stop\+Criterion} (\mbox{\hyperlink{class_stop_criterion}{Stop\+Criterion}} \&\&other) noexcept
+\item 
+\mbox{\Hypertarget{class_stop_criterion_a6c179a9f79f4b39cdf16ee3795708c33}\label{class_stop_criterion_a6c179a9f79f4b39cdf16ee3795708c33}} 
+void {\bfseries swap} (\mbox{\hyperlink{class_stop_criterion}{Stop\+Criterion}} \&other) noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_stop_criterion_a63f740be043cee8d1872ae375a8db1f4}\label{class_stop_criterion_a63f740be043cee8d1872ae375a8db1f4}} 
+unsigned int {\bfseries max\+\_\+n\+\_\+iter}
+\begin{DoxyCompactList}\small\item\em Maximum number of iterations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class that used for performing a stop of optimization process. 
+
+Method criterion should be defined in inheritors. \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{main_8cpp-example}{main.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_stop_criterion_abf1158cb3637caf8aedf162a542b5b2a}\label{class_stop_criterion_abf1158cb3637caf8aedf162a542b5b2a}} 
+\index{StopCriterion@{StopCriterion}!criterion@{criterion}}
+\index{criterion@{criterion}!StopCriterion@{StopCriterion}}
+\doxysubsubsection{\texorpdfstring{criterion()}{criterion()}}
+{\footnotesize\ttfamily virtual bool Stop\+Criterion\+::criterion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$}]{opt\+\_\+info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract method, should return true if stop criterion is triggered, otherwise should return false. 
+
+Implemented in \mbox{\hyperlink{class_iter_only_s_s_c_a5b085c7d6be2ec80326558e3700a9291}{Iter\+Only\+SSC}}, \mbox{\hyperlink{class_norm_diff_s_s_c_a007448444a978b1f956b010d60978824}{Norm\+Diff\+SSC}}, \mbox{\hyperlink{class_iter_after_imp_s_s_c_a53681eb99628186d5c8bd813c44a7de0}{Iter\+After\+Imp\+SSC}}, \mbox{\hyperlink{class_min_grad_norm_g_d_s_c_a66da5c9a037ff09b575237d464ee7cf4}{Min\+Grad\+Norm\+GDSC}}, \mbox{\hyperlink{class_min_rel_imp_norm_g_d_s_c_a2db75eeeb7412617d71d177858acff70}{Min\+Rel\+Imp\+Norm\+GDSC}}, and \mbox{\hyperlink{class_min_step_norm_g_d_s_c_a6538358d8db30326b51e976cbd6c5768}{Min\+Step\+Norm\+GDSC}}.
+
+\mbox{\Hypertarget{class_stop_criterion_a29c8d6a7c200b09baff0135b92b1a9aa}\label{class_stop_criterion_a29c8d6a7c200b09baff0135b92b1a9aa}} 
+\index{StopCriterion@{StopCriterion}!operator()@{operator()}}
+\index{operator()@{operator()}!StopCriterion@{StopCriterion}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily bool Stop\+Criterion\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_opt_info}{Opt\+Info}} $\ast$}]{opt\+\_\+info }\end{DoxyParamCaption})}
+
+Set fields of object of this class. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Stop\+Criterion.\+h\item 
+Stop\+Criterion.\+cpp\end{DoxyCompactItemize}
